@@ -1,0 +1,36 @@
+version: '3.9'  # Use the desired version of Docker Compose
+
+services:
+  spring-app:
+    depends_on:
+      - postgres
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - OPENAI_URL=${OPENAI_URL}
+      - ODDS_API_KEY=${ODDS_API_KEY}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS}
+      - ISSUER_URI=${ISSUER_URI}
+      - AUDIENCE=${AUDIENCE}
+      - BOOKMAKERS=${BOOKMAKERS}
+
+  postgres:
+    image: postgres:latest
+    container_name: my-postgres-container
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}  # Set your desired password here
+    ports:
+      - "5432:5432"  # Map the host port to container port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

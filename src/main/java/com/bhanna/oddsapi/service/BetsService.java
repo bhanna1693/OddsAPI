@@ -18,11 +18,11 @@ public class BetsService {
         this.oddsApiService = oddsApiService;
     }
 
-    public Flux<Bet> getPositiveEvBets() {
+    public Flux<Bet> getSavedEvBets() {
         return betsRepository.findAll();
     }
 
-    public Flux<SportsEvent> getPositiveEvBets(List<String> bookmakers) {
-        return oddsApiService.getEventsForAllSports(bookmakers);
+    public Flux<SportsEvent> getExpectedValueBets(List<String> bookmakers, List<String> markets) {
+        return oddsApiService.getExpectedValueForSportsEvents(bookmakers, markets);
     }
 }

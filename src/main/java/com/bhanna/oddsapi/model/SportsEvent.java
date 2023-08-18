@@ -14,7 +14,7 @@ public class SportsEvent {
     private Instant commenceTime;
     private String homeTeam;
     private String awayTeam;
-    private List<Bookmaker> bookmakers;
+    private List<Bookmaker> bookmakers = List.of();
 
     @Data
     public static class Bookmaker {

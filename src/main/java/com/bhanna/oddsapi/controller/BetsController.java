@@ -21,7 +21,7 @@ public class BetsController {
     }
 
     @GetMapping("")
-    public Flux<SportsEvent> getPositiveEvBets(@RequestParam List<String> bookmakers) {
-        return betsService.getPositiveEvBets(bookmakers);
+    public Flux<SportsEvent> getPositiveEvBets(@RequestParam List<String> bookmakers, @RequestParam List<String> markets) {
+        return betsService.getExpectedValueBets(bookmakers, markets);
     }
 }

@@ -18,8 +18,8 @@ public class OddsApiService {
         this.expectedValueService = expectedValueService;
     }
 
-    public Flux<SportsEvent> getEventsForSport(String sportKey, List<String> bookmakers) {
-        return oddsApiClient.getOddsForSport(sportKey, bookmakers);
+    public Flux<SportsEvent> getEventsForSport(String sportKey, List<String> bookmakers, List<String> markets) {
+        return oddsApiClient.getOddsForSport(sportKey, bookmakers, markets);
 
     }
 
@@ -28,9 +28,9 @@ public class OddsApiService {
 //        return oddsApiClient.getSports().filter(Sport::getActive);
     }
 
-    public Flux<SportsEvent> getEventsForAllSports(List<String> bookmakers) {
+    public Flux<SportsEvent> getExpectedValueForSportsEvents(List<String> bookmakers, List<String> markets) {
         return getSports()
-                .flatMap(sport -> getEventsForSport(sport.getKey(), bookmakers))
+                .flatMap(sport -> getEventsForSport("baseball_mlb", bookmakers, markets))
                 .map(expectedValueService::getExpectedValueForSportsEvent);
     }
 

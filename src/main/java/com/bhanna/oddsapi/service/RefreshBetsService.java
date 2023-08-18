@@ -11,6 +11,9 @@ public class RefreshBetsService {
 
     @Value("odds-api.bookmakers")
     private List<String> defaultBookmakers;
+
+    @Value("odds-api.markets")
+    private List<String> defaultMarkets;
     private final OddsApiService oddsApiService;
 
     public RefreshBetsService(OddsApiService oddsApiService) {
@@ -19,6 +22,6 @@ public class RefreshBetsService {
 
     @Scheduled(cron = "0 0 * * * *")
     public void refreshPositiveEvBets() {
-        oddsApiService.getEventsForAllSports(defaultBookmakers);
+        oddsApiService.getExpectedValueForSportsEvents(defaultBookmakers, defaultMarkets);
     }
 }

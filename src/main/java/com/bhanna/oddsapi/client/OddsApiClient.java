@@ -1,7 +1,10 @@
 package com.bhanna.oddsapi.client;
 
+import com.bhanna.oddsapi.config.OddsApiProperties;
 import com.bhanna.oddsapi.model.Sport;
 import com.bhanna.oddsapi.model.SportsEvent;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -13,14 +16,17 @@ import java.util.List;
 import java.util.Map;
 
 @Component
+@Log4j2
 public class OddsApiClient {
 
     private final WebClient webClient;
+    private final OddsApiProperties oddsApiProperties;
 
-    public OddsApiClient(OddsApiConfiguration oddsApiConfiguration) {
+    @Autowired
+    public OddsApiClient(OddsApiProperties oddsApiProperties) {
+        this.oddsApiProperties = oddsApiProperties;
         this.webClient = WebClient.builder()
                 .baseUrl("https://api.the-odds-api.com/v4")
-                .defaultUriVariables(Collections.singletonMap("apiKey", oddsApiConfiguration.getToken()))
                 .defaultHeaders(headers -> headers.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE))
                 .build();
     }
@@ -36,11 +42,13 @@ public class OddsApiClient {
 //                .exchangeToFlux(response -> response.bodyToFlux(Sport.class));
     }
 
-    public Flux<SportsEvent> getOddsForSport(String sportKey, List<String> bookmakers) {
+    public Flux<SportsEvent> getOddsForSport(String sportKey, List<String> bookmakers, List<String> markets) {
         return this.webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/sports/{sport}/odds")
+                        .queryParam("apiKey", oddsApiProperties.getOddsClient().getToken())
                         .queryParam("regions", "us")
+                        .queryParam("markets", markets)
                         .queryParam("bookmakers", bookmakers)
                         .build(Map.of("sport", sportKey))
                 )

@@ -1,5 +1,8 @@
 package com.bhanna.oddsapi.model;
 
+import lombok.Getter;
+
+@Getter
 public enum MarketKey {
     H2H("h2h"),
     SPREADS("spreads"),
@@ -20,7 +23,4 @@ public enum MarketKey {
         this.key = key;
     }
 
-    public String getKey() {
-        return key;
-    }
 }

@@ -16,25 +16,16 @@ import java.util.List;
 public class EdgeData {
     @Id
     private Long id;
+    private SportKey sport; // provided ***
+    private String sportTitle; // provided ***
+    private MarketKey market; // provided ***
+    private String eventId; // provided ***
+    private LocalDateTime startTime; // provided ***
+    private String homeTeam; // provided ***
+    private String awayTeam; // provided ***
     private Double edgePercent; // calculated
-    private Integer sharpestHomePrice; // filter to find
-    private Integer sharpestAwayPrice; // filter to find
-    private Integer zeroVigHomePrice; // calculated
-    private Integer zeroVigAwayPrice; // calculated
     private Integer marketWidth; // calculated
-    private SportKey sport; // provided
-    private String sportTitle; // provided
-    private MarketKey market; // provided
-    private String marketTitle; // mapped
-    private String eventId; // provided
-    private LocalDateTime startDate; // provided
-    private String homeTeam; // provided
-    private String awayTeam; // provided
-    private String bestPriceHomeName; // built
-    private String bestPriceHomeOdd; // built
-    private List<String> bestPriceHomeOddBooks; // filter to find
-    private String bestPriceAwayName; // built
-    private String bestPriceAwayOdd; // built
-    private List<String> bestPriceAwayOddBooks; // filter to find
+    private List<OutcomeResult> outcomeResults; // computed
+    private OutcomeResult sharpestOutcomeResult; // computed
     private LocalDateTime created = LocalDateTime.now();
 }

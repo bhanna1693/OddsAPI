@@ -1,18 +1,19 @@
 package com.bhanna.oddsapi.model.OddsApi;
 
+import com.bhanna.oddsapi.model.SportKey;
 import jakarta.annotation.Nullable;
 import lombok.Data;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 public class OddsApiSportsEvent {
 
     private String id;
-    private String sportKey;
+    private SportKey sportKey;
     private String sportTitle;
-    private Instant commenceTime;
+    private LocalDateTime commenceTime;
     private String homeTeam;
     private String awayTeam;
     private List<Bookmaker> bookmakers = List.of();
@@ -21,14 +22,14 @@ public class OddsApiSportsEvent {
     public static class Bookmaker {
         private String key;
         private String title;
-        private Instant lastUpdate;
+        private LocalDateTime lastUpdate;
         private List<Market> markets;
     }
 
     @Data
     public static class Market {
         private String key;
-        private Instant lastUpdate;
+        private LocalDateTime lastUpdate;
         private List<Outcome> outcomes;
     }
 

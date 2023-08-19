@@ -1,44 +1,27 @@
 package com.bhanna.oddsapi.util;
 
 public class Calculator {
+    public static double UNIT_SIZE = 10.0;
+
+    public static int decimalToAmericanOdds(double decimalOdds) {
+        if (decimalOdds >= 2.00) {
+            return (int) Math.round((decimalOdds - 1) * 100);
+        } else {
+            return (int) Math.round(-100 / (decimalOdds - 1));
+        }
+    }
+
 
     public static double calculateImpliedProbability(double odds) {
         if (odds > 0) {
-            return 1 / (odds + 1);
+            return 1 / odds;
         } else {
             return -odds / (-odds + 1);
         }
     }
 
-    public static double calculateZeroVigOdds(double impliedProbability) {
-        if (impliedProbability > 0.5) {
-            return 1 / (2 * impliedProbability - 1);
-        } else {
-            return -1 / (2 * impliedProbability - 1);
-        }
-    }
-
     public static double calculateMarketWidth(double odds, double pinnacleOdds) {
         return (odds - pinnacleOdds) * 100;
-    }
-
-
-    public double getExpectedValueForOutcome(double odds, double pinnacleOdds) {
-        double amountWagered = 100.0;
-        double probabilityOfWinning = calculateProbabilityOfWinning(pinnacleOdds);
-        double potentialProfit = probabilityOfWinning * amountWagered;
-        double probabilityOfLosing = calculateProbabilityOfLosing(probabilityOfWinning);
-
-        return calculateExpectedValue(probabilityOfWinning, potentialProfit, probabilityOfLosing, amountWagered);
-    }
-
-    public static double getExpectedValueForOutcome(double odds) {
-        double amountWagered = 100.0;
-        double probabilityOfWinning = calculateProbabilityOfWinning(odds);
-        double potentialProfit = probabilityOfWinning * amountWagered;
-        double probabilityOfLosing = calculateProbabilityOfLosing(probabilityOfWinning);
-
-        return calculateExpectedValue(probabilityOfWinning, potentialProfit, probabilityOfLosing, amountWagered);
     }
 
     public static double calculateProbabilityOfWinning(double odds) {
@@ -48,9 +31,6 @@ public class Calculator {
     public static double calculateProbabilityOfLosing(double probabilityOfWinning) {
         return 1.0 - probabilityOfWinning;
     }
-
-
-
 
 
     /**
@@ -78,6 +58,7 @@ public class Calculator {
         double probabilityOfLosing = 1 - probabilityOfWinning;
         return (odds * probabilityOfWinning - probabilityOfLosing) / odds;
     }
+
     public double calculateKellyPercentOfBankRoll(double odds, double pinnacleOdds) {
         double probabilityOfWinning = 1 - calculateProbabilityOfWinning(pinnacleOdds);
         double probabilityOfLosing = 1 - probabilityOfWinning;

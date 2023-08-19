@@ -1,7 +1,6 @@
 package com.bhanna.oddsapi.util;
 
 public class Calculator {
-    public static double UNIT_SIZE = 10.0;
 
     public static int decimalToAmericanOdds(double decimalOdds) {
         if (decimalOdds >= 2.00) {
@@ -12,56 +11,45 @@ public class Calculator {
     }
 
 
+    /**
+     * decimal odds are always positive
+     * @param odds
+     * @return the implied probability of a bet based on the odds expressed as a double (i.e. 50% = 0.5)
+     */
     public static double calculateImpliedProbability(double odds) {
-        if (odds > 0) {
-            return 1 / odds;
-        } else {
-            return -odds / (-odds + 1);
-        }
+        return 1.0 / odds;
+    }
+
+    /**
+     *
+     * @param impliedProbabilitySideOne
+     * @param impliedProbabilitySideTwo
+     * @return the probability of a bet with the vig (juice) removed expressed as a double (i.e. 50% = 0.5)
+     */
+    public static double calculateNoVigFairOddsProbability(double impliedProbabilitySideOne, double impliedProbabilitySideTwo) {
+        return impliedProbabilitySideOne / (impliedProbabilitySideOne + impliedProbabilitySideTwo);
+    }
+
+    /**
+     *
+     * @param probability likelihood of an outcome expressed as a double (i.e. 50% = 0.5)
+     * @return the expected odds based on the probability expressed in decimal format
+     */
+    public static double calculateOddsByProbability(double probability) {
+        return 1 / probability;
+    }
+
+    /**
+     * @param impliedProbabilitySideOne
+     * @param impliedProbabilitySideTwo
+     * @return the amount of juice/vig for a bet that has 2 outcomes
+     */
+    public static double calculateJuice(double impliedProbabilitySideOne, double impliedProbabilitySideTwo) {
+        return (impliedProbabilitySideOne + impliedProbabilitySideTwo) - 1;
     }
 
     public static double calculateMarketWidth(double odds, double pinnacleOdds) {
         return (odds - pinnacleOdds) * 100;
     }
 
-    public static double calculateProbabilityOfWinning(double odds) {
-        return 1.0 / odds;
-    }
-
-    public static double calculateProbabilityOfLosing(double probabilityOfWinning) {
-        return 1.0 - probabilityOfWinning;
-    }
-
-
-    /**
-     * EV = (Pw * Pp) − (Pl * A)
-     * <p>
-     * Pw - Probability of winning
-     * Pp - Potential profit
-     * Pl - Potential of losing
-     * A  - Amount wagered
-     */
-    public static double calculateExpectedValue(double fairWinProbability, double potentialProfit, double fairLossProbability, double amountWagered) {
-        return (fairWinProbability * potentialProfit) - (fairLossProbability * amountWagered);
-    }
-
-    /**
-     * f* = (bp - q) / b
-     * <p>
-     * f* is the fraction of the bankroll to bet.
-     * b is the odds received on the bet (decimal odds, not fractional).
-     * p is the probability of winning.
-     * q is the probability of losing, which is 1 - p.
-     */
-    public static double calculateKellyPercentOfBankRoll(double odds) {
-        double probabilityOfWinning = 1 - calculateProbabilityOfWinning(odds);
-        double probabilityOfLosing = 1 - probabilityOfWinning;
-        return (odds * probabilityOfWinning - probabilityOfLosing) / odds;
-    }
-
-    public double calculateKellyPercentOfBankRoll(double odds, double pinnacleOdds) {
-        double probabilityOfWinning = 1 - calculateProbabilityOfWinning(pinnacleOdds);
-        double probabilityOfLosing = 1 - probabilityOfWinning;
-        return (pinnacleOdds * probabilityOfWinning - probabilityOfLosing) / pinnacleOdds;
-    }
 }

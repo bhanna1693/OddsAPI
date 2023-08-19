@@ -6,8 +6,10 @@ public record OutcomeResult(
         Double impliedProbabilityHome,
         Double impliedProbabilityAway,
 
-        Double noVigFairOddsLineHome,
-        Double noVigFairOddsLineAway,
+        Double noVigProbabilityHome,
+        Double noVigProbabilityAway,
+        Double noVigOddsHome,
+        Double noVigOddsAway,
         Double juice
 ) {
 }

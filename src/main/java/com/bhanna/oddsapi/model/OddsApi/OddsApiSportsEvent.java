@@ -2,6 +2,7 @@ package com.bhanna.oddsapi.model.OddsApi;
 
 import com.bhanna.oddsapi.model.SportKey;
 import jakarta.annotation.Nullable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -34,6 +35,7 @@ public class OddsApiSportsEvent {
     }
 
     @Data
+    @AllArgsConstructor
     public static class Outcome {
         // A label of the outcome. For totals markets, this can be 'Over' or 'Under'.
         // For all other markets, this will be the name of the team or participant, or 'Draw'

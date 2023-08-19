@@ -20,19 +20,32 @@ public class EdgeDataMapper {
     }
 
     public static void addOutcomeResultToEdgeData(OddsApiSportsEvent.Market market, EdgeData edgeData) {
-        OutcomeResult newOutcome = getResult(market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
+        OutcomeResult newOutcome = buildOutcomeResult(market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
         edgeData.getOutcomeResults().add(newOutcome);
     }
 
-    public static OutcomeResult getResult(List<OddsApiSportsEvent.Outcome> outcomes, String homeOutcomeName, String awayOutcomeName) {
+    public static OutcomeResult buildOutcomeResult(List<OddsApiSportsEvent.Outcome> outcomes, String homeOutcomeName, String awayOutcomeName) {
         Double homePrice = getOutcomeByName(outcomes, homeOutcomeName).getPrice();
         Double awayPrice = getOutcomeByName(outcomes, awayOutcomeName).getPrice();
-        Double impliedProbabilityHome = Calculator.calculateImpliedProbability(homePrice);
-        Double impliedProbabilityAway = Calculator.calculateImpliedProbability(awayPrice);
-        Double juice = (impliedProbabilityHome + impliedProbabilityAway) - 1;
-        Double noVigFairOddsLineHome = impliedProbabilityHome / (impliedProbabilityHome + impliedProbabilityAway);
-        Double noVigFairOddsLineAway = impliedProbabilityAway / (impliedProbabilityAway + impliedProbabilityAway);
-        return new OutcomeResult(homePrice, awayPrice, impliedProbabilityHome, impliedProbabilityAway, noVigFairOddsLineHome, noVigFairOddsLineAway, juice);
+        double impliedProbabilityHome = Calculator.calculateImpliedProbability(homePrice);
+        double impliedProbabilityAway = Calculator.calculateImpliedProbability(awayPrice);
+        double juice = Calculator.calculateJuice(impliedProbabilityHome, impliedProbabilityAway);
+        double noVigProbabilityHome = Calculator.calculateNoVigFairOddsProbability(impliedProbabilityHome, impliedProbabilityAway);
+        double noVigProbabilityAway = Calculator.calculateNoVigFairOddsProbability(impliedProbabilityAway, impliedProbabilityHome);
+        double noVigOddsHome = Calculator.calculateOddsByProbability(noVigProbabilityHome);
+        double noVigOddsAway = Calculator.calculateOddsByProbability(noVigProbabilityAway);
+
+        return new OutcomeResult(
+                homePrice,
+                awayPrice,
+                impliedProbabilityHome,
+                impliedProbabilityAway,
+                noVigProbabilityHome,
+                noVigProbabilityAway,
+                noVigOddsHome,
+                noVigOddsAway,
+                juice
+        );
     }
 
     private static OddsApiSportsEvent.Outcome getOutcomeByName(List<OddsApiSportsEvent.Outcome> outcomes, String outcomeName) {

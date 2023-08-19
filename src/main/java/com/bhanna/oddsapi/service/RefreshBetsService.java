@@ -1,5 +1,6 @@
 package com.bhanna.oddsapi.service;
 
+import com.bhanna.oddsapi.model.MarketKey;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public class RefreshBetsService {
     private List<String> defaultBookmakers;
 
     @Value("odds-api.markets")
-    private List<String> defaultMarkets;
+    private List<MarketKey> defaultMarkets;
     private final OddsApiService oddsApiService;
 
     public RefreshBetsService(OddsApiService oddsApiService) {

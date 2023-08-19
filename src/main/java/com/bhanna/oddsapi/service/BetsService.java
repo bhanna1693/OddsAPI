@@ -1,7 +1,8 @@
 package com.bhanna.oddsapi.service;
 
-import com.bhanna.oddsapi.model.Bet;
-import com.bhanna.oddsapi.model.SportsEvent;
+import com.bhanna.oddsapi.model.MarketKey;
+import com.bhanna.oddsapi.model.Outcome;
+import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import com.bhanna.oddsapi.repository.BetsRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -18,11 +19,11 @@ public class BetsService {
         this.oddsApiService = oddsApiService;
     }
 
-    public Flux<Bet> getSavedEvBets() {
+    public Flux<Outcome> getSavedEvBets() {
         return betsRepository.findAll();
     }
 
-    public Flux<SportsEvent> getExpectedValueBets(List<String> bookmakers, List<String> markets) {
+    public Flux<OddsApiSportsEvent> getExpectedValueBets(List<String> bookmakers, List<MarketKey> markets) {
         return oddsApiService.getExpectedValueForSportsEvents(bookmakers, markets);
     }
 }

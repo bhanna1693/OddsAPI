@@ -42,3 +42,6 @@ odds-api:
     url: ${OPENAI_URL}
   odds-client:
     token: ${ODDS_API_KEY}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

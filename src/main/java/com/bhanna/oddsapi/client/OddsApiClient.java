@@ -1,8 +1,9 @@
 package com.bhanna.oddsapi.client;
 
 import com.bhanna.oddsapi.config.OddsApiProperties;
-import com.bhanna.oddsapi.model.Sport;
-import com.bhanna.oddsapi.model.SportsEvent;
+import com.bhanna.oddsapi.model.MarketKey;
+import com.bhanna.oddsapi.model.OddsApi.OddsApiSport;
+import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +31,8 @@ public class OddsApiClient {
                 .build();
     }
 
-    public Flux<Sport> getSports() {
-        return Flux.just(new Sport());
+    public Flux<OddsApiSport> getSports() {
+        return Flux.just(new OddsApiSport());
 //        return this.webClient.get()
 //                .uri(uriBuilder -> uriBuilder
 //                        .path("/sports")
@@ -42,7 +42,11 @@ public class OddsApiClient {
 //                .exchangeToFlux(response -> response.bodyToFlux(Sport.class));
     }
 
-    public Flux<SportsEvent> getOddsForSport(String sportKey, List<String> bookmakers, List<String> markets) {
+    public Flux<OddsApiSportsEvent> getOddsForSport(String sportKey, List<String> bookmakers, List<MarketKey> markets, Boolean includePinnacle) {
+        if (includePinnacle) {
+            bookmakers.add("pinnacle");
+        }
+
         return this.webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/sports/{sport}/odds")
@@ -50,8 +54,8 @@ public class OddsApiClient {
                         .queryParam("regions", "us")
                         .queryParam("markets", markets)
                         .queryParam("bookmakers", bookmakers)
-                        .build(Map.of("sport", sportKey))
+                        .build(Map.of("sport", "baseball_mlb"))
                 )
-                .exchangeToFlux(response -> response.bodyToFlux(SportsEvent.class));
+                .exchangeToFlux(response -> response.bodyToFlux(OddsApiSportsEvent.class));
     }
 }

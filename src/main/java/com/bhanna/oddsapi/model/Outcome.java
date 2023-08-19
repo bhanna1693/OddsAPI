@@ -1,10 +1,16 @@
 package com.bhanna.oddsapi.model;
 
 import jakarta.annotation.Nullable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Data
-public class Outcome {
+@AllArgsConstructor
+@NoArgsConstructor
+public abstract class Outcome {
+
     // A label of the outcome. For totals markets, this can be 'Over' or 'Under'.
     // For all other markets, this will be the name of the team or participant, or 'Draw'
     private String name;
@@ -25,5 +31,8 @@ public class Outcome {
     //  (for example, for player prop markets, it includes the player's name)
     private String description;
 
-    private Double expectedValue;
+    private Double sharpestOdds;
+    private Double impliedProbability;
+    private Double averageImpliedProbability;
+    private Double zerVigOdds;
 }

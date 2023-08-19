@@ -1,90 +1,72 @@
 package com.bhanna.oddsapi.service;
 
-import com.bhanna.oddsapi.model.Outcome;
-import com.bhanna.oddsapi.model.SportsEvent;
+import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
+@Log4j2
 public class ExpectedValueService {
 
-    private static List<String> sharpestBooks = List.of("pinnacle");
-//    get odds from pinnacle and calculate ev using their lines
+    // the sharpest book
+//    also consider "Circa"
+    private static final String sharpestBook = "pinnacle";
 
-    public SportsEvent getExpectedValueForSportsEvent(SportsEvent sportsEvent) {
-        sportsEvent.getBookmakers().forEach(bookmaker ->
-                bookmaker.getMarkets().forEach(market -> {
-                    switch (market.getKey()) {
-                        case "h2h" -> market.getOutcomes().forEach(outcome -> {
-                            double kellyBetSize = calculateKellyPercentOfBankRoll(outcome);
-                            outcome.setExpectedValue(getExpectedValueForOutcome(outcome));
-                        });
-                        case "spread", "total" -> market.getOutcomes().forEach(outcome -> {
-                            outcome.setExpectedValue(getExpectedValueForOutcome(outcome));
-                        });
-                        case "outright" -> market.getOutcomes().forEach(outcome -> {
-                            outcome.setExpectedValue(getExpectedValueForOutcome(outcome));
-                        });
-                        default -> throw new IllegalStateException("Unexpected value: " + market.getKey());
-                    }
-                })
-        );
+    public OddsApiSportsEvent getExpectedValueForSportsEvent(OddsApiSportsEvent oddsApiSportsEvent) {
+        Optional<OddsApiSportsEvent.Bookmaker> sharpestBookmaker = getSharpestBookmaker(oddsApiSportsEvent);
 
-        return sportsEvent;
-    }
+        if (sharpestBookmaker.isPresent()) {
+            oddsApiSportsEvent.getBookmakers().stream()
+                    .filter(b -> b.getKey() != sharpestBook)
+                    .forEach(bookmaker -> processBookmaker(bookmaker, sharpestBookmaker.get()));
+        } else {
+            // TODO: IMPLEMENT
+            log.warn("SHARPEST BOOK NOT FOUND. FIGURE OUT WHAT TO DO HERE");
+        }
 
-    /**
-     * f* = (bp - q) / b
-     * <p>
-     * f* is the fraction of the bankroll to bet.
-     * b is the odds received on the bet (decimal odds, not fractional).
-     * p is the probability of winning.
-     * q is the probability of losing, which is 1 - p.
-     */
-    private double calculateKellyPercentOfBankRoll(Outcome outcome) {
-        double probabilityOfWinning = 1 - calculateProbabilityOfWinning(outcome.getPrice());
-        double probabilityOfLosing = 1 - probabilityOfWinning;
-        return (outcome.getPrice() * probabilityOfWinning - probabilityOfLosing) / outcome.getPrice();
-    }
-
-    private double calculateProbabilityOfWinning(Double odds) {
-        return 1.0 / odds;
-    }
-
-    private double calculateProbabilityOfLosing(Double probabilityOfWinning) {
-        return 1.0 - probabilityOfWinning;
+        return oddsApiSportsEvent;
     }
 
 
-    private Double getExpectedValueForOutcome(Outcome outcome) {
-        Double amountWagered = 100.0;
-        Double probabilityOfWinning = calculateProbabilityOfWinning(outcome.getPrice());
-        Double potentialProfit = probabilityOfWinning * amountWagered;
-        Double probabilityOfLosing = calculateProbabilityOfLosing(probabilityOfWinning);
-
-        return calculateExpectedValue(probabilityOfWinning, potentialProfit, probabilityOfLosing, amountWagered);
+    private Optional<OddsApiSportsEvent.Bookmaker> getSharpestBookmaker(OddsApiSportsEvent oddsApiSportsEvent) {
+        return oddsApiSportsEvent.getBookmakers().stream()
+                .filter(bookmaker -> bookmaker.getKey().equals(sharpestBook))
+                .findFirst();
     }
 
-    public Double getExpectedValueForSpreadOrTotal(Outcome outcome) {
-        Double amountWagered = 100.0;
-        Double probabilityOfWinning = 1.0 / outcome.getPrice();
-        Double potentialProfit = probabilityOfWinning * amountWagered;
-        Double probabilityOfLosing = 1.0 - probabilityOfWinning;
-
-        return calculateExpectedValue(probabilityOfWinning, potentialProfit, probabilityOfLosing, amountWagered);
+    private void processBookmaker(OddsApiSportsEvent.Bookmaker bookmaker, OddsApiSportsEvent.Bookmaker sharpestBookmaker) {
+        bookmaker.getMarkets().forEach(market -> {
+            getMarketMatch(market, sharpestBookmaker);
+        });
     }
 
-
-    /**
-     * EV = (Pw * Pp) − (Pl * A)
-     * <p>
-     * Pw - Probability of winning
-     * Pp - Potential profit
-     * Pl - Potential of losing
-     * A  - Amount wagered
-     */
-    private Double calculateExpectedValue(Double probabilityOfWinning, Double potentialProfit, Double probabilityOfLosing, Double amountWagered) {
-        return (probabilityOfWinning * potentialProfit) - (probabilityOfLosing * amountWagered);
+    private static Optional<OddsApiSportsEvent.Market> getMarketMatch(OddsApiSportsEvent.Market market, OddsApiSportsEvent.Bookmaker sharpestBookmaker) {
+        return sharpestBookmaker.getMarkets().stream().filter(sharpestBookmakerMarket -> sharpestBookmakerMarket.getKey() == market.getKey()).findFirst();
     }
+
+    private void processMarket(OddsApiSportsEvent.Market market, OddsApiSportsEvent.Market sharpestBookmakerMarket) {
+
+    }
+
+    private void processH2HMarket(OddsApiSportsEvent.Market market, OddsApiSportsEvent.Market sharpestBookmakerMarket) {
+        OddsApiSportsEvent.Outcome team1 = market.getOutcomes().get(0);
+        OddsApiSportsEvent.Outcome team2 = market.getOutcomes().get(1);
+        market.getOutcomes().forEach(outcome -> {
+            getSharpestBookmakerOutcomeMatch(sharpestBookmakerMarket, outcome).ifPresentOrElse(sharpestBookmakerOutcome -> {
+                // Process with sharpestBookmaker outcome
+//                outcome.setExpectedValue(getExpectedValueForOutcome(outcome.getPrice(), sharpestBookmakerOutcome.getPrice()));
+//                outcome.setMarketWidth(calculateMarketWidth(outcome.getPrice(), sharpestBookmakerOutcome.getPrice()));
+            }, () -> {
+                // Process without sharpestBookmaker outcome
+//                outcome.setExpectedValue(getExpectedValueForOutcome(outcome.getPrice()));
+            });
+        });
+    }
+
+    public static Optional<OddsApiSportsEvent.Outcome> getSharpestBookmakerOutcomeMatch(OddsApiSportsEvent.Market sharpestBookmakerMarket, OddsApiSportsEvent.Outcome outcome) {
+        return sharpestBookmakerMarket.getOutcomes().stream().filter(sharpestBookmakerOutcome -> sharpestBookmakerOutcome.getName() == outcome.getName()).findFirst();
+    }
+
 }

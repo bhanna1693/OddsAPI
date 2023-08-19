@@ -1,7 +1,7 @@
 package com.bhanna.oddsapi.controller;
 
+import com.bhanna.oddsapi.model.EdgeData;
 import com.bhanna.oddsapi.model.MarketKey;
-import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import com.bhanna.oddsapi.service.BetsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,7 @@ public class BetsController {
     }
 
     @GetMapping("")
-    public Flux<OddsApiSportsEvent> getPositiveEvBets(@RequestParam List<String> bookmakers, @RequestParam List<MarketKey> markets) {
+    public Flux<EdgeData> getPositiveEvBets(@RequestParam List<String> bookmakers, @RequestParam List<MarketKey> markets) {
         return betsService.getExpectedValueBets(bookmakers, markets);
     }
 }

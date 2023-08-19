@@ -15,9 +15,6 @@ import java.util.Map;
 @Service
 @Log4j2
 public class EdgeService {
-    // the sharpest book
-    // also consider "Circa"
-    private static final String sharpestBook = "pinnacle";
 
     public Flux<EdgeData> getEdgeDataFromSportsEvent(OddsApiSportsEvent sportsEvent) {
         try {
@@ -37,9 +34,7 @@ public class EdgeService {
                     }
 
                     switch (marketKey) {
-                        case H2H -> {
-                            EdgeDataMapper.extracted(market, edgeData);
-                        }
+                        case H2H -> EdgeDataMapper.addOutcomeResultToEdgeData(market, edgeData);
                         default -> throw new IllegalStateException("Market not implemented: " + marketKey);
                     }
                 }

@@ -19,7 +19,7 @@ public class EdgeDataMapper {
         return edgeData;
     }
 
-    public static void extracted(OddsApiSportsEvent.Market market, EdgeData edgeData) {
+    public static void addOutcomeResultToEdgeData(OddsApiSportsEvent.Market market, EdgeData edgeData) {
         OutcomeResult newOutcome = getResult(market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
         edgeData.getOutcomeResults().add(newOutcome);
     }

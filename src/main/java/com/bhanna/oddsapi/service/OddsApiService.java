@@ -34,9 +34,12 @@ public class OddsApiService {
     }
 
     public Flux<EdgeData> getExpectedValueForSportsEvents(List<String> bookmakers, List<MarketKey> markets) {
-        return getSports()
+        Flux<EdgeData> edgeData = getSports()
                 .flatMap(oddsApiSport -> getEventsForSport(oddsApiSport.getKey(), bookmakers, markets))
                 .flatMap(edgeService::getEdgeDataFromSportsEvent);
+
+        log.info("EDGE data: {}", edgeData);
+        return edgeService.getBestPlays(edgeData);
     }
 
 }

@@ -19,12 +19,17 @@ public class EdgeDataMapper {
         return edgeData;
     }
 
-    public static void addOutcomeResultToEdgeData(OddsApiSportsEvent.Market market, EdgeData edgeData) {
-        OutcomeResult newOutcome = buildOutcomeResult(market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
+    public static void addOutcomeResultToEdgeData(OddsApiSportsEvent.Bookmaker bookmaker, OddsApiSportsEvent.Market market, EdgeData edgeData) {
+        OutcomeResult newOutcome = buildOutcomeResult(bookmaker.getKey(), market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
         edgeData.getOutcomeResults().add(newOutcome);
+
+        if (Objects.equals(bookmaker.getKey(), "pinnacle")) {
+            edgeData.setSharpestOutcomeResult(newOutcome);
+            edgeData.setMarketWidth(Calculator.calculateMarketWidth(newOutcome.homePrice(), newOutcome.awayPrice()));
+        }
     }
 
-    public static OutcomeResult buildOutcomeResult(List<OddsApiSportsEvent.Outcome> outcomes, String homeOutcomeName, String awayOutcomeName) {
+    public static OutcomeResult buildOutcomeResult(String bookmaker, List<OddsApiSportsEvent.Outcome> outcomes, String homeOutcomeName, String awayOutcomeName) {
         Double homePrice = getOutcomeByName(outcomes, homeOutcomeName).getPrice();
         Double awayPrice = getOutcomeByName(outcomes, awayOutcomeName).getPrice();
         double impliedProbabilityHome = Calculator.calculateImpliedProbability(homePrice);
@@ -36,6 +41,9 @@ public class EdgeDataMapper {
         double noVigOddsAway = Calculator.calculateOddsByProbability(noVigProbabilityAway);
 
         return new OutcomeResult(
+                bookmaker,
+                homeOutcomeName,
+                awayOutcomeName,
                 homePrice,
                 awayPrice,
                 impliedProbabilityHome,

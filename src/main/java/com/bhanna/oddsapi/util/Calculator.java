@@ -48,8 +48,24 @@ public class Calculator {
         return (impliedProbabilitySideOne + impliedProbabilitySideTwo) - 1;
     }
 
-    public static double calculateMarketWidth(double odds, double pinnacleOdds) {
-        return (odds - pinnacleOdds) * 100;
+    /**
+     *
+     * @param impliedProbability
+     * @param actualProbability
+     * @return the edge percent expressed in decimal format (i.e. 7% = 0.07
+     */
+    public static double calculateEdge(double impliedProbability, double actualProbability) {
+        return impliedProbability - actualProbability;
+    }
+
+    public static double calculateExpectedValue(double odds, double fairWinProbability, double wagerAmount) {
+        double profitIfWin = odds * wagerAmount;
+        double fairLossProbability = 1 - fairWinProbability;
+        return (fairWinProbability * profitIfWin) - (fairLossProbability * wagerAmount);
+    }
+
+    public static int calculateMarketWidth(double oddsSideOne, double oddsSideTwo) {
+        return (int) ((oddsSideOne - oddsSideTwo) * 100);
     }
 
 }

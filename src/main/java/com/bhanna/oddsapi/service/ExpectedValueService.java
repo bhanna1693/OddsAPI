@@ -4,6 +4,7 @@ import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -19,7 +20,7 @@ public class ExpectedValueService {
 
         if (sharpestBookmaker.isPresent()) {
             oddsApiSportsEvent.getBookmakers().stream()
-                    .filter(b -> b.getKey() != sharpestBook)
+                    .filter(b -> !Objects.equals(b.getKey(), sharpestBook))
                     .forEach(bookmaker -> processBookmaker(bookmaker, sharpestBookmaker.get()));
         } else {
             // TODO: IMPLEMENT

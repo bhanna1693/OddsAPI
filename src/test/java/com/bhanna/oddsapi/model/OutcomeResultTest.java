@@ -29,7 +29,7 @@ public class OutcomeResultTest {
         calculatorMockedStatic.when(() -> Calculator.calculateNoVigFairOddsProbability(anyDouble(), anyDouble())).thenCallRealMethod();
         calculatorMockedStatic.when(() -> Calculator.calculateOddsByProbability(anyDouble())).thenCallRealMethod();
 
-        OutcomeResult result = EdgeDataMapper.buildOutcomeResult(outcomes, "HomeOutcome", "AwayOutcome");
+        OutcomeResult result = EdgeDataMapper.buildOutcomeResult("bookmaker", outcomes, "HomeOutcome", "AwayOutcome");
 
         calculatorMockedStatic.verify(() -> Calculator.calculateImpliedProbability(anyDouble()), times(2));
         calculatorMockedStatic.verify(() -> Calculator.calculateJuice(anyDouble(), anyDouble()), times(1));

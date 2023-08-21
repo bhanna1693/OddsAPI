@@ -1,6 +1,9 @@
 package com.bhanna.oddsapi.model;
 
 public record OutcomeResult(
+        String bookmaker,
+        String homeName,
+        String awayName,
         Double homePrice,
         Double awayPrice,
         Double impliedProbabilityHome,

@@ -52,8 +52,8 @@ public class OddsApiClient {
                         .path("/sports/{sport}/odds")
                         .queryParam("apiKey", oddsApiProperties.getOddsClient().getToken())
                         .queryParam("regions", "us")
-                        .queryParam("markets", markets)
-                        .queryParam("bookmakers", bookmakers)
+                        .queryParam("markets", String.join(",", markets.stream().map(Enum::name).toList()))
+                        .queryParam("bookmakers", String.join(",", bookmakers))
                         .build(Map.of("sport", "baseball_mlb"))
                 )
                 .exchangeToFlux(response -> response.bodyToFlux(OddsApiSportsEvent.class));

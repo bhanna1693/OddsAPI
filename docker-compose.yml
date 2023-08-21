@@ -19,6 +19,7 @@ services:
       - ISSUER_URI=${ISSUER_URI}
       - AUDIENCE=${AUDIENCE}
       - BOOKMAKERS=${BOOKMAKERS}
+      - MARKETS=${MARKETS}
 
   postgres:
     image: postgres:latest

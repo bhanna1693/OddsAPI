@@ -1,14 +1,18 @@
 package com.bhanna.oddsapi.model.OddsApi;
 
+import com.bhanna.oddsapi.model.MarketKey;
 import com.bhanna.oddsapi.model.SportKey;
 import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OddsApiSportsEvent {
 
     private String id;
@@ -20,6 +24,8 @@ public class OddsApiSportsEvent {
     private List<Bookmaker> bookmakers = List.of();
 
     @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class Bookmaker {
         private String key;
         private String title;
@@ -28,14 +34,17 @@ public class OddsApiSportsEvent {
     }
 
     @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class Market {
-        private String key;
+        private MarketKey key;
         private LocalDateTime lastUpdate;
         private List<Outcome> outcomes;
     }
 
     @Data
     @AllArgsConstructor
+    @NoArgsConstructor
     public static class Outcome {
         // A label of the outcome. For totals markets, this can be 'Over' or 'Under'.
         // For all other markets, this will be the name of the team or participant, or 'Draw'

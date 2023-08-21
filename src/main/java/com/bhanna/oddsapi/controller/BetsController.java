@@ -22,7 +22,9 @@ public class BetsController {
     }
 
     @GetMapping("")
-    public Flux<EdgeData> getPositiveEvBets(@RequestParam List<String> bookmakers, @RequestParam List<MarketKey> markets) {
-        return betsService.getExpectedValueBets(bookmakers, markets);
+    public Flux<EdgeData> getPositiveEvBets(@RequestParam(name="bookmakers") List<String> bookmakers,
+                                            @RequestParam(name="markets") List<String> markets) {
+        List<MarketKey> marketKeys = markets.stream().map(MarketKey::valueOf).toList();
+        return betsService.getExpectedValueBets(bookmakers, marketKeys);
     }
 }

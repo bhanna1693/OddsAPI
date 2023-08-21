@@ -25,6 +25,14 @@ public class EdgeData {
     private String awayTeam; // provided ***
     private Double edgePercent; // calculated
     private Integer marketWidth; // calculated
+    private Double homeEdgePercent;
+    private Double awayEdgePercent;
+    private String bestPriceAwayName;
+    private Double bestPriceAwayOdds;
+    private List<String> bestPriceAwayBooks;
+    private String bestPriceHomeName;
+    private Double bestPriceHomeOdds;
+    private List<String> bestPriceHomeBooks;
     private List<OutcomeResult> outcomeResults; // computed
     private OutcomeResult sharpestOutcomeResult; // computed
     private LocalDateTime created = LocalDateTime.now();

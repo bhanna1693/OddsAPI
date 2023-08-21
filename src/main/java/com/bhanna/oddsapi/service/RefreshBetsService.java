@@ -14,7 +14,7 @@ public class RefreshBetsService {
     private List<String> defaultBookmakers;
 
     @Value("odds-api.markets")
-    private List<MarketKey> defaultMarkets;
+    private List<String> defaultMarkets;
     private final OddsApiService oddsApiService;
 
     public RefreshBetsService(OddsApiService oddsApiService) {
@@ -23,6 +23,8 @@ public class RefreshBetsService {
 
     @Scheduled(cron = "0 0 * * * *")
     public void refreshPositiveEvBets() {
-        oddsApiService.getExpectedValueForSportsEvents(defaultBookmakers, defaultMarkets);
+        List<MarketKey> markets = defaultMarkets.stream().map(MarketKey::valueOf).toList();
+
+        oddsApiService.getExpectedValueForSportsEvents(defaultBookmakers, markets);
     }
 }

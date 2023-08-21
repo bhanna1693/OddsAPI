@@ -45,7 +45,7 @@ public class Calculator {
      * @return the amount of juice/vig for a bet that has 2 outcomes
      */
     public static double calculateJuice(double impliedProbabilitySideOne, double impliedProbabilitySideTwo) {
-        return (impliedProbabilitySideOne + impliedProbabilitySideTwo) - 1;
+        return Math.abs(impliedProbabilitySideOne - impliedProbabilitySideTwo);
     }
 
     /**
@@ -58,10 +58,13 @@ public class Calculator {
         return impliedProbability - actualProbability;
     }
 
-    public static double calculateExpectedValue(double odds, double fairWinProbability, double wagerAmount) {
+    public static double calculateExpectedValue(double odds, double fairWinProbability) {
+        double wagerAmount = 100;
         double profitIfWin = odds * wagerAmount;
         double fairLossProbability = 1 - fairWinProbability;
-        return (fairWinProbability * profitIfWin) - (fairLossProbability * wagerAmount);
+        double dollarAmountEv = (fairWinProbability * profitIfWin) - (fairLossProbability * wagerAmount);
+        double percentage = (dollarAmountEv / wagerAmount);
+        return percentage;
     }
 
     public static int calculateMarketWidth(double oddsSideOne, double oddsSideTwo) {

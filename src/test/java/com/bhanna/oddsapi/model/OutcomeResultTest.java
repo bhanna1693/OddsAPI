@@ -2,7 +2,6 @@ package com.bhanna.oddsapi.model;
 
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import com.bhanna.oddsapi.util.Calculator;
-import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
@@ -10,9 +9,9 @@ import org.mockito.MockedStatic;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-@Log4j2
 public class OutcomeResultTest {
 
     @Test
@@ -29,13 +28,30 @@ public class OutcomeResultTest {
         calculatorMockedStatic.when(() -> Calculator.calculateNoVigFairOddsProbability(anyDouble(), anyDouble())).thenCallRealMethod();
         calculatorMockedStatic.when(() -> Calculator.calculateOddsByProbability(anyDouble())).thenCallRealMethod();
 
-        OutcomeResult result = EdgeDataMapper.buildOutcomeResult("bookmaker", outcomes, "HomeOutcome", "AwayOutcome");
+        EdgeData edgeData = new EdgeData();
+        edgeData.setHomeTeam("HomeOutcome");
+        edgeData.setAwayTeam("AwayOutcome");
+        OutcomeResult result = OutcomeResultMapper.fromBookmakerOutcome("bookmaker", outcomes, edgeData);
 
         calculatorMockedStatic.verify(() -> Calculator.calculateImpliedProbability(anyDouble()), times(2));
         calculatorMockedStatic.verify(() -> Calculator.calculateJuice(anyDouble(), anyDouble()), times(1));
         calculatorMockedStatic.verify(() -> Calculator.calculateNoVigFairOddsProbability(anyDouble(), anyDouble()), times(2));
         calculatorMockedStatic.verify(() -> Calculator.calculateOddsByProbability(anyDouble()), times(2));
         Assertions.assertNotNull(result);
-        log.info(result);
     }
+
+    @Test
+    public void testGetOutcomeByName() {
+        String expectedOutcomeName = "HomeOutcome";
+        OddsApiSportsEvent.Outcome expectedOutcome = new OddsApiSportsEvent.Outcome(expectedOutcomeName, 1.5, null, null);
+        List<OddsApiSportsEvent.Outcome> outcomes = Arrays.asList(
+                new OddsApiSportsEvent.Outcome("AwayOutcome", 2.0, null, null),
+                expectedOutcome
+        );
+
+        OddsApiSportsEvent.Outcome result = OutcomeResultMapper.getOutcomeByName(outcomes, "HomeOutcome");
+
+        assertEquals(expectedOutcome, result);
+    }
+
 }

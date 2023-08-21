@@ -4,7 +4,6 @@ import com.bhanna.oddsapi.model.EdgeData;
 import com.bhanna.oddsapi.model.EdgeDataMapper;
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
 import com.bhanna.oddsapi.model.OutcomeResult;
-import com.bhanna.oddsapi.util.Calculator;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -61,7 +60,7 @@ public class EdgeService {
             }
 
             switch (market.getKey()) {
-                case h2h -> EdgeDataMapper.addOutcomeResultToEdgeData(bookmaker, market, edgeData);
+                case h2h -> EdgeDataMapper.addOutcomeResult(bookmaker, market, edgeData);
                 default -> throw new IllegalStateException("Market not implemented: " + market.getKey());
             }
         }
@@ -80,24 +79,22 @@ public class EdgeService {
             List<String> bestPriceHomeBooks = new ArrayList<>();
 
             for (OutcomeResult outcomeResult : edgeData.getOutcomeResults()) {
-                double edgePercentHome = Calculator.calculateEdge(edgeData.getSharpestOutcomeResult().impliedProbabilityHome(), outcomeResult.impliedProbabilityHome());
-                double edgePercentAway = Calculator.calculateEdge(edgeData.getSharpestOutcomeResult().impliedProbabilityAway(), outcomeResult.impliedProbabilityAway());
-                if (edgePercentHome > bestEdgePercentHome) {
-                    bestEdgePercentHome = edgePercentHome;
+                if (outcomeResult.homeEdgePercent() > bestEdgePercentHome) {
+                    bestEdgePercentHome = outcomeResult.homeEdgePercent();
                     bestPriceHomeOdds = outcomeResult.homePrice();
                     bestPriceHomeName = outcomeResult.homeName();
                     bestPriceHomeBooks.clear();
                     bestPriceHomeBooks.add(outcomeResult.bookmaker());
-                } else if (edgePercentHome == bestEdgePercentHome) {
+                } else if (outcomeResult.homeEdgePercent() == bestEdgePercentHome) {
                     bestPriceHomeBooks.add(outcomeResult.bookmaker());
                 }
-                if (edgePercentAway > bestEdgePercentAway) {
-                    bestEdgePercentAway = edgePercentAway;
+                if (outcomeResult.awayEdgePercent() > bestEdgePercentAway) {
+                    bestEdgePercentAway = outcomeResult.awayEdgePercent();
                     bestPriceAwayOdds = outcomeResult.awayPrice();
                     bestPriceAwayName = outcomeResult.awayName();
                     bestPriceAwayBooks.clear();
                     bestPriceAwayBooks.add(outcomeResult.bookmaker());
-                } else if (edgePercentAway == bestEdgePercentAway) {
+                } else if (outcomeResult.awayEdgePercent() == bestEdgePercentAway) {
                     bestPriceAwayBooks.add(outcomeResult.bookmaker());
                 }
             }

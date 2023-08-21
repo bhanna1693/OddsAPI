@@ -1,10 +1,11 @@
 package com.bhanna.oddsapi.model.OddsApi;
 
+import com.bhanna.oddsapi.model.SportKey;
 import lombok.Data;
 
 @Data
 public class OddsApiSport {
-    private String key;
+    private SportKey key;
     private Boolean active;
     private String group;
     private String description;

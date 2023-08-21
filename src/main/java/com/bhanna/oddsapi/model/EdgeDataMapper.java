@@ -22,11 +22,12 @@ public class EdgeDataMapper {
     public static void addOutcomeResultToEdgeData(OddsApiSportsEvent.Bookmaker bookmaker, OddsApiSportsEvent.Market market, EdgeData edgeData) {
         OutcomeResult newOutcome = buildOutcomeResult(bookmaker.getKey(), market.getOutcomes(), edgeData.getHomeTeam(), edgeData.getAwayTeam());
         edgeData.getOutcomeResults().add(newOutcome);
+    }
 
-        if (Objects.equals(bookmaker.getKey(), "pinnacle")) {
-            edgeData.setSharpestOutcomeResult(newOutcome);
-            edgeData.setMarketWidth(Calculator.calculateMarketWidth(newOutcome.homePrice(), newOutcome.awayPrice()));
-        }
+    public static void setSharpestInfo(String sharpestBookmaker, List<OddsApiSportsEvent.Outcome> outcomes, EdgeData edgeData) {
+        OutcomeResult outcomeResult = EdgeDataMapper.buildOutcomeResult(sharpestBookmaker, outcomes, edgeData.getHomeTeam(), edgeData.getAwayTeam());
+        edgeData.setSharpestOutcomeResult(outcomeResult);
+        edgeData.setMarketWidth(Calculator.calculateMarketWidth(outcomeResult.homePrice(), outcomeResult.awayPrice()));
     }
 
     public static OutcomeResult buildOutcomeResult(String bookmaker, List<OddsApiSportsEvent.Outcome> outcomes, String homeOutcomeName, String awayOutcomeName) {
@@ -56,7 +57,7 @@ public class EdgeDataMapper {
         );
     }
 
-    private static OddsApiSportsEvent.Outcome getOutcomeByName(List<OddsApiSportsEvent.Outcome> outcomes, String outcomeName) {
+    public static OddsApiSportsEvent.Outcome getOutcomeByName(List<OddsApiSportsEvent.Outcome> outcomes, String outcomeName) {
         return outcomes.stream()
                 .filter(outcome -> Objects.equals(outcome.getName(), outcomeName))
                 .findFirst()

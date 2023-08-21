@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -29,11 +30,11 @@ public class EdgeData {
     private Double awayEdgePercent;
     private String bestPriceAwayName;
     private Double bestPriceAwayOdds;
-    private List<String> bestPriceAwayBooks;
+    private List<String> bestPriceAwayBooks = new ArrayList<>();
     private String bestPriceHomeName;
     private Double bestPriceHomeOdds;
-    private List<String> bestPriceHomeBooks;
-    private List<OutcomeResult> outcomeResults; // computed
+    private List<String> bestPriceHomeBooks = new ArrayList<>();
+    private List<OutcomeResult> outcomeResults = new ArrayList<>(); // computed
     private OutcomeResult sharpestOutcomeResult; // computed
     private LocalDateTime created = LocalDateTime.now();
 }

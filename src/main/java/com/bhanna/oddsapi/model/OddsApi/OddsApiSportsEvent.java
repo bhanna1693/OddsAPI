@@ -2,12 +2,14 @@ package com.bhanna.oddsapi.model.OddsApi;
 
 import com.bhanna.oddsapi.model.MarketKey;
 import com.bhanna.oddsapi.model.SportKey;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -15,21 +17,40 @@ import java.util.List;
 @NoArgsConstructor
 public class OddsApiSportsEvent {
 
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("sport_key")
     private SportKey sportKey;
+
+    @JsonProperty("sport_title")
     private String sportTitle;
+
+    @JsonProperty("commence_time")
     private LocalDateTime commenceTime;
+
+    @JsonProperty("home_team")
     private String homeTeam;
+
+    @JsonProperty("away_team")
     private String awayTeam;
-    private List<Bookmaker> bookmakers = List.of();
+
+    private List<Bookmaker> bookmakers = new ArrayList<>();
 
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Bookmaker {
+        @JsonProperty("key")
         private String key;
+
+        @JsonProperty("title")
         private String title;
+
+        @JsonProperty("last_update")
         private LocalDateTime lastUpdate;
+
+        @JsonProperty("markets")
         private List<Market> markets;
     }
 
@@ -37,8 +58,13 @@ public class OddsApiSportsEvent {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Market {
+        @JsonProperty("key")
         private MarketKey key;
+
+        @JsonProperty("last_update")
         private LocalDateTime lastUpdate;
+
+        @JsonProperty("outcomes")
         private List<Outcome> outcomes;
     }
 
@@ -46,24 +72,18 @@ public class OddsApiSportsEvent {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Outcome {
-        // A label of the outcome. For totals markets, this can be 'Over' or 'Under'.
-        // For all other markets, this will be the name of the team or participant, or 'Draw'
+        @JsonProperty("name")
         private String name;
 
-        //  The odds of the outcome.
-        //  The format is determined by the oddsFormat query param.
-        //  The format is decimal by default.
+        @JsonProperty("price")
         private Double price;
-        //  The handicap or points of the outcome,
-        //  only applicable to spreads and totals markets
-        //  (this property will be missing for h2h and outrights markets)
+
+        @JsonProperty("point")
         @Nullable
         private Double point;
 
+        @JsonProperty("description")
         @Nullable
-        //  This field is only relevant for certain markets.
-        //  It contains more information about the outcome
-        //  (for example, for player prop markets, it includes the player's name)
         private String description;
     }
 }

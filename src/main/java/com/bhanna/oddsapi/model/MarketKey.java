@@ -2,10 +2,9 @@ package com.bhanna.oddsapi.model;
 
 import lombok.Getter;
 
-@Getter
 public enum MarketKey {
     h2h,
-    SPREADS,
+    spreads,
     TOTALS,
     OUTRIGHTS,
     H2H_LAY,

@@ -23,6 +23,7 @@ public class OddsApiProperties {
     @Data
     public static class OddsClient {
         private String token;
+        private String url;
     }
 }
 

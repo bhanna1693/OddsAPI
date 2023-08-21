@@ -21,12 +21,10 @@ public class EdgeService {
         try {
             Map<String, EdgeData> edgeDataMap = new HashMap<>();
 
-            addSharpestEdgeDataToMap(sportsEvent, edgeDataMap);
-
             for (OddsApiSportsEvent.Bookmaker bookmaker : sportsEvent.getBookmakers()) {
                 addEdgeDataToMap(sportsEvent, edgeDataMap, bookmaker);
             }
-            log.info("GET EDGE DATA FROM SPORTS EVENT: {}", edgeDataMap.values());
+            log.info("EDGE DATA RETRIEVED FOR SPORTS EVENT: [sportsEvent:{}, eventId:{}]", sportsEvent.getSportTitle(), sportsEvent.getId());
             return Flux.fromIterable(edgeDataMap.values());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -34,39 +32,31 @@ public class EdgeService {
         }
     }
 
-    public void addSharpestEdgeDataToMap(OddsApiSportsEvent sportsEvent, Map<String, EdgeData> edgeDataMap) {
-        try {
-            OddsApiSportsEvent.Bookmaker sharpestBookmaker = sportsEvent.getBookmakers().stream()
-                    .filter(bookmaker -> {
-                        log.info("BOOKMAKER IS: {}", bookmaker.getKey());
-                        return bookmaker.getKey().equals(SHARPEST_BOOKMAKER);
-                    })
-                    .findFirst()
-                    .orElseThrow(() -> new NoSuchElementException("Sharpest bookmaker not found for sports event"));
-
-            addEdgeDataToMap(sportsEvent, edgeDataMap, sharpestBookmaker);
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-        }
-    }
-
     private static void addEdgeDataToMap(OddsApiSportsEvent sportsEvent, Map<String, EdgeData> edgeDataMap, OddsApiSportsEvent.Bookmaker bookmaker) {
         for (OddsApiSportsEvent.Market market : bookmaker.getMarkets()) {
-            String sharpestEdgeDataIdentifier = String.format("%s:%s:%s:%s", market.getKey(), SHARPEST_BOOKMAKER, sportsEvent.getId(), sportsEvent.getCommenceTime());
+            // get corresponding sharpest market
+            // if it does not exist, skip by throwing
+            OddsApiSportsEvent.Bookmaker sharpestBookmaker = sportsEvent.getBookmakers().stream()
+                    .filter(bookmaker1 -> Objects.equals(bookmaker1.getKey(), SHARPEST_BOOKMAKER))
+                    .findFirst()
+                    .orElseThrow(() -> new NoSuchElementException(
+                            String.format("Sharpest bookmaker not found for this sport event: [sportEvent:%s, eventId:%s]", sportsEvent.getSportTitle(), sportsEvent.getId())
+                    ));
+            List<OddsApiSportsEvent.Outcome> sharpestOutcomes = sharpestBookmaker.getMarkets().stream()
+                    .filter(market1 -> market1.getKey() == market.getKey())
+                    .findFirst()
+                    .orElseThrow(() -> new NoSuchElementException(
+                            String.format("Sharpest bookmaker does not contain outcomes for this sport event market: [sportEvent:%s, eventId:%s, market:%s]", sportsEvent.getSportTitle(), sportsEvent.getId(), market.getKey())
+                    )).getOutcomes();
+
             String uniqueEdgeDataIdentifier = String.format("%s:%s:%s:%s", market.getKey(), bookmaker.getKey(), sportsEvent.getId(), sportsEvent.getCommenceTime());
-
-            if (Objects.equals(sharpestEdgeDataIdentifier, uniqueEdgeDataIdentifier)) {
-                // already processed
-                return;
-            }
-
-            EdgeData sharpestEdgeData = edgeDataMap.get(sharpestEdgeDataIdentifier);
             EdgeData edgeData = edgeDataMap.get(uniqueEdgeDataIdentifier);
 
-
             if (edgeData == null) {
+                log.info("Creating edge data for market: [sportsEvent:{}, market:{}]", sportsEvent.getSportTitle(), market.getKey());
                 edgeData = EdgeDataMapper.buildFromSportsEvent(sportsEvent);
                 edgeData.setMarket(market.getKey());
+                EdgeDataMapper.setSharpestInfo(sharpestBookmaker.getKey(), sharpestOutcomes, edgeData);
                 edgeDataMap.put(uniqueEdgeDataIdentifier, edgeData);
             }
 
@@ -84,14 +74,14 @@ public class EdgeService {
             double bestEdgePercentAway = -999.9;
             String bestPriceAwayName = null;
             Double bestPriceAwayOdds = null;
-            List<String> bestPriceAwayBooks = List.of();
+            List<String> bestPriceAwayBooks = new ArrayList<>();
             String bestPriceHomeName = null;
             Double bestPriceHomeOdds = null;
-            List<String> bestPriceHomeBooks = List.of();
+            List<String> bestPriceHomeBooks = new ArrayList<>();
 
             for (OutcomeResult outcomeResult : edgeData.getOutcomeResults()) {
-                double edgePercentHome = Calculator.calculateEdge(outcomeResult.impliedProbabilityHome(), edgeData.getSharpestOutcomeResult().impliedProbabilityHome());
-                double edgePercentAway = Calculator.calculateEdge(outcomeResult.impliedProbabilityAway(), edgeData.getSharpestOutcomeResult().impliedProbabilityAway());
+                double edgePercentHome = Calculator.calculateEdge(edgeData.getSharpestOutcomeResult().impliedProbabilityHome(), outcomeResult.impliedProbabilityHome());
+                double edgePercentAway = Calculator.calculateEdge(edgeData.getSharpestOutcomeResult().impliedProbabilityAway(), outcomeResult.impliedProbabilityAway());
                 if (edgePercentHome > bestEdgePercentHome) {
                     bestEdgePercentHome = edgePercentHome;
                     bestPriceHomeOdds = outcomeResult.homePrice();
@@ -120,7 +110,6 @@ public class EdgeService {
             edgeData.setBestPriceHomeName(bestPriceHomeName);
             edgeData.setBestPriceHomeOdds(bestPriceHomeOdds);
             edgeData.setBestPriceHomeBooks(bestPriceHomeBooks);
-            log.info("EDGE DATA: {}", edgeData);
             return edgeData;
         });
     }

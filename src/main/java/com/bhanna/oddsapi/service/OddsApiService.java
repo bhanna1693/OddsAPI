@@ -5,6 +5,7 @@ import com.bhanna.oddsapi.model.EdgeData;
 import com.bhanna.oddsapi.model.MarketKey;
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSport;
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
+import com.bhanna.oddsapi.model.SportKey;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -24,7 +25,7 @@ public class OddsApiService {
         this.edgeService = edgeService;
     }
 
-    public Flux<OddsApiSportsEvent> getEventsForSport(String sportKey, List<String> bookmakers, List<MarketKey> markets) {
+    public Flux<OddsApiSportsEvent> getEventsForSport(SportKey sportKey, List<String> bookmakers, List<MarketKey> markets) {
         return oddsApiClient.getOddsForSport(sportKey, bookmakers, markets, true);
     }
 
@@ -38,7 +39,6 @@ public class OddsApiService {
                 .flatMap(oddsApiSport -> getEventsForSport(oddsApiSport.getKey(), bookmakers, markets))
                 .flatMap(edgeService::getEdgeDataFromSportsEvent);
 
-        log.info("EDGE data: {}", edgeData);
         return edgeService.getBestPlays(edgeData);
     }
 

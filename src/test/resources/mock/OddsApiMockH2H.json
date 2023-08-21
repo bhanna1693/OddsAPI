@@ -1,0 +1,3327 @@
+[
+  {
+    "id": "e62347ef059a52168d2120cd14adfc17",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T17:07:57Z",
+    "home_team": "New York Yankees",
+    "away_team": "Boston Red Sox",
+    "bookmakers": [
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Boston Red Sox",
+                "price": 1.02
+              },
+              {
+                "name": "New York Yankees",
+                "price": 17.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Boston Red Sox",
+                "price": 1.01
+              },
+              {
+                "name": "New York Yankees",
+                "price": 21
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Boston Red Sox",
+                "price": 1.02
+              },
+              {
+                "name": "New York Yankees",
+                "price": 27
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d191af2740627c561c09c21667748a90",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T18:20:00Z",
+    "home_team": "Chicago Cubs",
+    "away_team": "Kansas City Royals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.22
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.22
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 4.2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.18
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 4.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.35
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 3.13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.2
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 4.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "6d2c38f900854976282dd2d2593ac71b",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T19:00:00Z",
+    "home_team": "Los Angeles Dodgers",
+    "away_team": "Miami Marlins",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.6
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.63
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.34
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.61
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.65
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.65
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.67
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.67
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.15
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.62
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fbec87012b2b33cfb4a4df01d9779ac5",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T19:10:00Z",
+    "home_team": "San Diego Padres",
+    "away_team": "Arizona Diamondbacks",
+    "bookmakers": [
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 1.95
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.89
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 1.87
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.87
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.05
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.02
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.83
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.12
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.83
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.05
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 1.95
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.87
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.05
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "262ef6fb3adec1d3eda565eeea369c74",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T20:05:00Z",
+    "home_team": "Texas Rangers",
+    "away_team": "Milwaukee Brewers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.05
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.1
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.1
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.1
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.13
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.82
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.1
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.74
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.08
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 1.95
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c7d90054fec292554c37c67c23387650",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T20:05:00Z",
+    "home_team": "Washington Nationals",
+    "away_team": "Philadelphia Phillies",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.65
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.67
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.64
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.32
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.65
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.69
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.34
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.65
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.62
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.65
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 2.2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b8f0fdb4de3a24d1cec8ea6a98072b8e",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T20:07:00Z",
+    "home_team": "Los Angeles Angels",
+    "away_team": "Tampa Bay Rays",
+    "bookmakers": [
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.23
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.3
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.65
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.26
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.67
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.2
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.65
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.2
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.25
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.32
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.25
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.65
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "397d6a79cb7ef5dae5703ddccf0e92bc",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T22:40:00Z",
+    "home_team": "Cincinnati Reds",
+    "away_team": "Toronto Blue Jays",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.24
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.68
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.25
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.3
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.65
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.22
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.3
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.71
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.25
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.68
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.2
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 2.15
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.67
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4132c3e05fa049dab5354c3be0885471",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T23:10:00Z",
+    "home_team": "Cleveland Guardians",
+    "away_team": "Detroit Tigers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.6
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.6
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.61
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.62
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.48
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.6
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.61
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.56
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.59
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 2.43
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac0ab0006779a0098baf34b3299f5ade",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T23:10:00Z",
+    "home_team": "Houston Astros",
+    "away_team": "Seattle Mariners",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.62
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.36
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.65
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.62
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.36
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.62
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.67
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.66
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.67
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.25
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.65
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b13f345b52d86a7cd55baf6088b3dfac",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T23:10:00Z",
+    "home_team": "Minnesota Twins",
+    "away_team": "Pittsburgh Pirates",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.56
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.57
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.56
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.56
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.57
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.59
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.56
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.57
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.45
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.56
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.35
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "76c658bc4b4b3f4982d39b2d9f57acd7",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T23:15:00Z",
+    "home_team": "St. Louis Cardinals",
+    "away_team": "New York Mets",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.87
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.87
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.89
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.96
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.87
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.93
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.88
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.96
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.87
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 1.83
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.91
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d8ce791cef77e4424d458557db042546",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-19T23:20:00Z",
+    "home_team": "Atlanta Braves",
+    "away_team": "San Francisco Giants",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.83
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.83
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.85
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.83
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.88
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2.05
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.83
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2.04
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.83
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Atlanta Braves",
+                "price": 1.91
+              },
+              {
+                "name": "San Francisco Giants",
+                "price": 1.83
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e30b8b0059c8ddb993040be0ce1912b6",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T00:10:00Z",
+    "home_team": "Colorado Rockies",
+    "away_team": "Chicago White Sox",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.85
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 1.98
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.83
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.85
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.87
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.9
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 2.03
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.87
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 1.96
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.87
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.8
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 1.95
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "82bee93bd45befb89eeaf594bbe637be",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T00:40:00Z",
+    "home_team": "San Diego Padres",
+    "away_team": "Arizona Diamondbacks",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.54
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.54
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.58
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.53
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.5
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.56
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.55
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.54
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.69
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.54
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.45
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.57
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Arizona Diamondbacks",
+                "price": 2.5
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 1.56
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "582c33bea592d504065d1324d3f27c73",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T01:07:00Z",
+    "home_team": "Oakland Athletics",
+    "away_team": "Baltimore Orioles",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.57
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.45
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.53
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.58
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.54
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.53
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.58
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.54
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.59
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.54
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.56
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.62
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "178cf16df439d47a9abea0a0259dde06",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T01:07:00Z",
+    "home_team": "Los Angeles Angels",
+    "away_team": "Tampa Bay Rays",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.69
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.23
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.77
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.15
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Angels",
+                "price": 2.1
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 1.74
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7b9530e8855d981aaadbfe61c8ac64d9",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T01:10:00Z",
+    "home_team": "Los Angeles Dodgers",
+    "away_team": "Miami Marlins",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.54
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.54
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "windcreek",
+        "title": "Wind Creek",
+        "last_update": "2023-08-19T18:51:01Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:01Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.51
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.45
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-08-19T18:50:59Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:50:59Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.53
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.58
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.54
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-08-19T18:51:09Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:09Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.54
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.56
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.63
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-08-19T18:48:29Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:48:29Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.53
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.55
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Los Angeles Dodgers",
+                "price": 1.53
+              },
+              {
+                "name": "Miami Marlins",
+                "price": 2.58
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5e19f5273c6ff5f6f469938d697f424b",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T17:05:00Z",
+    "home_team": "Houston Astros",
+    "away_team": "Seattle Mariners",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Houston Astros",
+                "price": 1.57
+              },
+              {
+                "name": "Seattle Mariners",
+                "price": 2.45
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3a28c8135301aa989e4a0a89185ff9c2",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T17:40:00Z",
+    "home_team": "Cincinnati Reds",
+    "away_team": "Toronto Blue Jays",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cincinnati Reds",
+                "price": 1.98
+              },
+              {
+                "name": "Toronto Blue Jays",
+                "price": 1.85
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1a63534980423b48bcaf4549159f960",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T17:40:00Z",
+    "home_team": "Cleveland Guardians",
+    "away_team": "Detroit Tigers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 1.95
+              },
+              {
+                "name": "Detroit Tigers",
+                "price": 1.87
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b221d74b7163ba574b83b66829b8ddc8",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T18:10:00Z",
+    "home_team": "Minnesota Twins",
+    "away_team": "Pittsburgh Pirates",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Minnesota Twins",
+                "price": 1.8
+              },
+              {
+                "name": "Pittsburgh Pirates",
+                "price": 2.05
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "abf104a920e48954b6d36320c8da9bcc",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T18:15:00Z",
+    "home_team": "St. Louis Cardinals",
+    "away_team": "New York Mets",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "New York Mets",
+                "price": 2.2
+              },
+              {
+                "name": "St. Louis Cardinals",
+                "price": 1.7
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b75110cd4fd6fe4208a3091e00580194",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T18:20:00Z",
+    "home_team": "Chicago Cubs",
+    "away_team": "Kansas City Royals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:49:42Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:49:42Z",
+            "outcomes": [
+              {
+                "name": "Chicago Cubs",
+                "price": 1.43
+              },
+              {
+                "name": "Kansas City Royals",
+                "price": 2.9
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "06175452d378f0b3d64f60d0194d91b3",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T18:35:00Z",
+    "home_team": "Texas Rangers",
+    "away_team": "Milwaukee Brewers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": 2.54
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 1.54
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ddb5e30361ab12ed7c0cc2f643c05c22",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T19:10:00Z",
+    "home_team": "Colorado Rockies",
+    "away_team": "Chicago White Sox",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Chicago White Sox",
+                "price": 1.6
+              },
+              {
+                "name": "Colorado Rockies",
+                "price": 2.4
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "50151b4d134e2baf3595d3d4502934d0",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T20:07:00Z",
+    "home_team": "Oakland Athletics",
+    "away_team": "Baltimore Orioles",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Baltimore Orioles",
+                "price": 1.54
+              },
+              {
+                "name": "Oakland Athletics",
+                "price": 2.54
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2d75c0b58a11253dd5dd8b9bfb0bf8ee",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-08-20T23:10:00Z",
+    "home_team": "Washington Nationals",
+    "away_team": "Philadelphia Phillies",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-08-19T18:51:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-08-19T18:51:00Z",
+            "outcomes": [
+              {
+                "name": "Philadelphia Phillies",
+                "price": 1.41
+              },
+              {
+                "name": "Washington Nationals",
+                "price": 3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

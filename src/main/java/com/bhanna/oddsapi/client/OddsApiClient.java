@@ -4,6 +4,7 @@ import com.bhanna.oddsapi.config.OddsApiProperties;
 import com.bhanna.oddsapi.model.MarketKey;
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSport;
 import com.bhanna.oddsapi.model.OddsApi.OddsApiSportsEvent;
+import com.bhanna.oddsapi.model.SportKey;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -22,11 +23,10 @@ public class OddsApiClient {
     private final WebClient webClient;
     private final OddsApiProperties oddsApiProperties;
 
-    @Autowired
     public OddsApiClient(OddsApiProperties oddsApiProperties) {
         this.oddsApiProperties = oddsApiProperties;
         this.webClient = WebClient.builder()
-                .baseUrl("https://api.the-odds-api.com/v4")
+                .baseUrl(oddsApiProperties.getOddsClient().getUrl())
                 .defaultHeaders(headers -> headers.set(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE))
                 .build();
     }
@@ -42,7 +42,7 @@ public class OddsApiClient {
 //                .exchangeToFlux(response -> response.bodyToFlux(Sport.class));
     }
 
-    public Flux<OddsApiSportsEvent> getOddsForSport(String sportKey, List<String> bookmakers, List<MarketKey> markets, Boolean includePinnacle) {
+    public Flux<OddsApiSportsEvent> getOddsForSport(SportKey sportKey, List<String> bookmakers, List<MarketKey> markets, Boolean includePinnacle) {
         if (includePinnacle) {
             bookmakers.add("pinnacle");
         }
@@ -56,6 +56,8 @@ public class OddsApiClient {
                         .queryParam("bookmakers", String.join(",", bookmakers))
                         .build(Map.of("sport", "baseball_mlb"))
                 )
-                .exchangeToFlux(response -> response.bodyToFlux(OddsApiSportsEvent.class));
+                .retrieve()
+                .bodyToFlux(OddsApiSportsEvent.class)
+                .log();
     }
 }

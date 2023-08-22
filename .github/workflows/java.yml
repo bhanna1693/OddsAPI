@@ -61,6 +61,7 @@ jobs:
     uses: ./.github/workflows/setup-jfrog.yml
 
     steps:
+      - uses: ./.github/workflows/setup-jfrog.yml
 
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true

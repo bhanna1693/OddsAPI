@@ -62,6 +62,7 @@ jobs:
     steps:
       - name: Check out Repository
         uses: actions/checkout@v3
+
       - uses: jfrog/setup-jfrog-cli@v3
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
@@ -87,8 +88,7 @@ jobs:
 
     steps:
       - name: Check out Repository
-        uses:
-          actions/checkout@v3
+        uses: actions/checkout@v3
 
       - uses: jfrog/setup-jfrog-cli@v3
         env:

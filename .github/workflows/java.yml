@@ -19,8 +19,7 @@ env:
   CORS_ALLOWED_ORIGINS: ${{ secrets.CORS_ALLOWED_ORIGINS }}
   ISSUER_URI: ${{ secrets.ISSUER_URI }}
   AUDIENCE: ${{ secrets.AUDIENCE }}
-  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
 
 # Permission can be added at job level or workflow level
 permissions:
@@ -52,6 +51,9 @@ jobs:
 
       - name: Copy settings.xml to configure Artifactory
         run: cp .github/settings.xml $HOME/.m2/settings.xml
+        env:
+          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
 
       - uses: jfrog/setup-jfrog-cli@v3
         env:

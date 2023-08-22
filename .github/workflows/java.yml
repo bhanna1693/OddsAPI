@@ -80,7 +80,7 @@ jobs:
 
       - name: Build Tag and push Docker Image
         env:
-          IMAGE_NAME: bhanna.jfrog.io/bhanna-docker/bhanna-OddsAPI:${{ github.run_number }}
+          IMAGE_NAME: bhanna.jfrog.io/bhanna-docker/bhanna-odds-api:${{ github.run_number }}
         run: |
           jf docker build -t $IMAGE_NAME .
           jf docker push $IMAGE_NAME

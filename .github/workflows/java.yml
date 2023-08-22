@@ -80,7 +80,7 @@ jobs:
       - name: Deploy to Artifactory
         run: |
           jf mvn-config
-          jf mvn deploy 
+          jf mvn deploy -DskipTests=true
 
 #      - name: Build Tag and push Docker Image
 #        env:

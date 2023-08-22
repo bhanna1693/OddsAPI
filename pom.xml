@@ -93,13 +93,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>a0jx1ubuhmksl-artifactory-primary-0-snapshots</name>
-            <url>https://bhanna.jfrog.io/artifactory/bhanna-libs-snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
-
 </project>

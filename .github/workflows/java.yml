@@ -49,26 +49,24 @@ jobs:
           distribution: temurin
           cache: maven
 
-      - name: Copy settings.xml to configure Artifactory
-        run: cp .github/settings.xml $HOME/.m2/settings.xml
-
-      - name: Replace Artifactory Credentials in settings.xml
-        run: |
-          sed -i "s/\${ARTIFACTORY_USERNAME}/${{ secrets.ARTIFACTORY_USERNAME }}/g" $HOME/.m2/settings.xml
-          sed -i "s/\${ARTIFACTORY_PASSWORD}/${{ secrets.ARTIFACTORY_PASSWORD }}/g" $HOME/.m2/settings.xml
-
       - uses: jfrog/setup-jfrog-cli@v3
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
-      - name: Setup JFrog mvn-config
-        run: jf mvn-config
-
-      - name: CAT
-        run: cat $HOME/.m2/settings.xml
+      - name: Setup JFrog mvn config
+        run: |
+          jf mvnc \
+          --server-id-resolve bhanna \
+          --server-id-deploy bhanna \
+          --repo-resolve-releases bhanna-libs-release \
+          --repo-resolve-snapshots bhanna-libs-snapshot \
+          --repo-deploy-releases bhanna-libs-snapshot-local \
+          --repo-deploy-snapshots bhanna-libs-release-local
 
       - name: Build with JF Maven
-        run: jf mvn clean install -DskipTests=true
+        run: |
+          jf mvn clean install -DskipTests=true
 
       - name: Deploy to Artifactory
-        run: jf mvn deploy -DskipTests=true
+        run: |
+          jf mvn deploy -DskipTests=true

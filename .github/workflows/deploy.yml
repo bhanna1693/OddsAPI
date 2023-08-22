@@ -24,8 +24,6 @@ jobs:
     name: deploy to aws
     runs-on: ubuntu-latest
 
-
-
     steps:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
@@ -34,8 +32,10 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
       - name: Download artifact
-        run: |
-          jf rt dl bhanna-docker/bhanna-odds-api/6
+        env:
+          SOURCE_PATH: bhanna-libs-snapshot/com/bhanna/OddsAPI/*.jar
+          TARGET_PATH: target/
+        run: jf rt dl $SOURCE_PATH $TARGET_PATH
 
       ###################      PUSH TO AWS ECR      #####################
 

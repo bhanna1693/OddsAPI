@@ -53,6 +53,9 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
+      # using the JFrog CLI
+      # https://jfrog.com/blog/take-full-control-of-your-maven-deployments/
+
       - name: Setup JFrog mvn config
         run: |
           jf mvnc \
@@ -67,6 +70,6 @@ jobs:
         run: |
           jf mvn clean install -DskipTests=true
 
-      - name: Deploy to Artifactory
-        run: |
-          jf mvn deploy -DskipTests=true
+#      - name: Deploy to Artifactory
+#        run: |
+#          jf mvn deploy -DskipTests=true

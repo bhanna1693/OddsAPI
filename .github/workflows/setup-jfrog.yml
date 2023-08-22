@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: Setup JFrog CLI
 
 on:
   workflow_call:
@@ -7,14 +7,13 @@ on:
         required: true
 
 jobs:
-  setupJFrog:
-    name: setup jfrog
+  setup-jfrog-cli:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@v3
+      - uses: jfrog/setup-jfrog-cli@v3
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
-      - name: Setup JF mvn-config
+      - name: Setup JFrog mvn-config
         run: jf mvn-config  # uses JF_ENV_! to setup mvn config

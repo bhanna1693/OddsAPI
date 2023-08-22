@@ -39,7 +39,6 @@ jobs:
   setupJava:
     name: setup java
     runs-on: ubuntu-latest
-    environment: dev
 
     steps:
       - name: Check out Repository
@@ -52,34 +51,19 @@ jobs:
           distribution: temurin
           cache: maven
 
-      - name: Copy settings.xml
+      - name: Copy settings.xml to configure Artifactory
         run: cp .github/settings.xml $HOME/.m2/settings.xml
-
-  setupJFrog:
-    name: setup jfrog
-    runs-on: ubuntu-latest
-    environment: dev
-    env:
-      ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
-    needs: setupJava
-
-    steps:
-      - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@v3
-        env:
-          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
-
-      - name: Setup JF mvn-config
-        run: jf mvn-config  # uses JF_ENV_! to setup mvn config
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    environment: dev
-    needs: setupJFrog
+    needs: setupJava
 
     steps:
+      - uses: ./github/workflows/setup-jfrog.yml
+        with:
+          JF_ENV_1: $JF_ENV_1
+
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true
   #  test:
@@ -93,11 +77,13 @@ jobs:
   publish:
     name: Publish to Artifactory
     runs-on: ubuntu-latest
-    environment: dev
-    needs:
-      - setupJFrog
-      - build
+
+    needs: build
 
     steps:
+      - uses: ./github/workflows/setup-jfrog.yml
+        with:
+          JF_ENV_1: $JF_ENV_1
+
       - name: Deploy to Artifactory
         run: jf mvn deploy -DskipTests=true

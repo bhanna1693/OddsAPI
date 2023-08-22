@@ -60,8 +60,8 @@ jobs:
           --server-id-deploy bhanna \
           --repo-resolve-releases bhanna-libs-release \
           --repo-resolve-snapshots bhanna-libs-snapshot \
-          --repo-deploy-releases bhanna-libs-snapshot-local \
-          --repo-deploy-snapshots bhanna-libs-release-local
+          --repo-deploy-releases bhanna-libs-release-local \
+          --repo-deploy-snapshots bhanna-libs-snapshot-local
 
       - name: Build with JF Maven
         run: |

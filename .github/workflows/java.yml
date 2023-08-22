@@ -59,9 +59,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      #    uses: bhanna1693/OddsAPI/.github/workflows/setup-jfrog.yml@main
+      - uses: ./.github/workflows/setup-jfrog.yml
+
       - name: Build with JF Maven
-        #    uses: bhanna1693/OddsAPI/.github/workflows/setup-jfrog.yml@main
-        uses: ./.github/workflows/setup-jfrog.yml
         run: jf mvn clean install -DskipTests=true
   #  test:
   #    name: Test
@@ -76,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: ./.github/workflows/setup-jfrog.yml
+
       - name: Deploy to Artifactory
-        #    uses: bhanna1693/OddsAPI/.github/workflows/setup-jfrog.yml@main
-        uses: ./.github/workflows/setup-jfrog.yml
         run: jf mvn deploy -DskipTests=true

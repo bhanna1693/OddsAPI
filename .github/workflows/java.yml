@@ -60,6 +60,9 @@ jobs:
       - name: Setup JFrog mvn-config
         run: jf mvn-config
 
+      - name: CAT
+        run: cat $HOME/.m2/settings.xml
+
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true
 

@@ -72,8 +72,6 @@ jobs:
     needs: setupJFrog
 
     steps:
-      - uses: ./.github/workflows/setup-jfrog.yml
-
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true
   #  test:
@@ -90,7 +88,5 @@ jobs:
     needs: setupJFrog
 
     steps:
-      - uses: ./.github/workflows/setup-jfrog.yml
-
       - name: Deploy to Artifactory
         run: jf mvn deploy -DskipTests=true

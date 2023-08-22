@@ -60,9 +60,11 @@ jobs:
     needs: setup-java
 
     steps:
+      - name: Check out Repository
+        uses: actions/checkout@v3
       - uses: jfrog/setup-jfrog-cli@v3
         env:
-          JF_ENV_1: ${{ inputs.jf_env_1 }}
+          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
       - name: Setup JFrog mvn-config
         run: jf mvn-config
@@ -84,9 +86,13 @@ jobs:
     needs: build
 
     steps:
+      - name: Check out Repository
+        uses:
+          actions/checkout@v3
+
       - uses: jfrog/setup-jfrog-cli@v3
         env:
-          JF_ENV_1: ${{ inputs.jf_env_1 }}
+          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
       - name: Setup JFrog mvn-config
         run: jf mvn-config

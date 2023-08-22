@@ -33,6 +33,7 @@ concurrency:
   group: "oddsAPI"
   cancel-in-progress: false
 
+
 jobs:
 
   setupJava:
@@ -58,6 +59,9 @@ jobs:
     name: setup jfrog
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
     needs: setupJava
 
     steps:

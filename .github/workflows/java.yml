@@ -80,6 +80,7 @@ jobs:
 
       - name: Deploy to Artifactory
         run: |
+          jf mvn-config bhanna
           jf mvn deploy 
 
 #      - name: Build Tag and push Docker Image

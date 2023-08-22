@@ -75,12 +75,11 @@ jobs:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
         env:
-          JF_URL: ${{ secrets.JF_URL }}
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
 
       - name: Deploy to Artifactory
         run: |
-          jf mvn-config bhanna
+          jf mvn-config
           jf mvn deploy 
 
 #      - name: Build Tag and push Docker Image

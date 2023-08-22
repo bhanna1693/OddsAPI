@@ -60,7 +60,7 @@ jobs:
     needs: setupJava
 
     steps:
-      - uses: ./.github/workflows/setup-jfrog.yml
+      - uses: .github/workflows/setup-jfrog.yml
         with:
           JF_ENV_1: $JF_ENV_1
 
@@ -81,7 +81,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: ./.github/workflows/setup-jfrog.yml
+      - uses: .github/workflows/setup-jfrog.yml
         with:
           JF_ENV_1: $JF_ENV_1
 

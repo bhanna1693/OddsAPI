@@ -58,7 +58,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     # uses: bhanna1693/OddsAPI/.github/workflows/setup-jfrog.yml@main
-    uses: ./.github/workflows/setup-jfrog.yml
 
     steps:
       - uses: ./.github/workflows/setup-jfrog.yml

@@ -54,11 +54,8 @@ jobs:
 
       - name: Replace Artifactory Credentials in settings.xml
         run: |
-          sed -i 's/${env.ARTIFACTORY_USERNAME}/'"$ARTIFACTORY_USERNAME"'/g' $HOME/.m2/settings.xml
-          sed -i 's/${env.ARTIFACTORY_PASSWORD}/'"$ARTIFACTORY_PASSWORD"'/g' $HOME/.m2/settings.xml
-        env:
-          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          sed -i "s/\${ARTIFACTORY_USERNAME}/${{ secrets.ARTIFACTORY_USERNAME }}/g" $HOME/.m2/settings.xml
+          sed -i "s/\${ARTIFACTORY_PASSWORD}/${{ secrets.ARTIFACTORY_PASSWORD }}/g" $HOME/.m2/settings.xml
 
       - uses: jfrog/setup-jfrog-cli@v3
         env:

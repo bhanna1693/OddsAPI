@@ -51,6 +51,11 @@ jobs:
 
       - name: Copy settings.xml to configure Artifactory
         run: cp .github/settings.xml $HOME/.m2/settings.xml
+
+      - name: Replace Artifactory Credentials in settings.xml
+        run: |
+          sed -i 's/${env.ARTIFACTORY_USERNAME}/${ARTIFACTORY_USERNAME}/g' $HOME/.m2/settings.xml
+          sed -i 's/${env.ARTIFACTORY_PASSWORD}/${ARTIFACTORY_PASSWORD}/g' $HOME/.m2/settings.xml
         env:
           ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
           ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}

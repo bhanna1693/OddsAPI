@@ -1,0 +1,56 @@
+on:
+  repository_dispatch:
+    types: hot-deploy
+name: deploy
+jobs:
+  deploy:
+    name: deploy to aws
+    runs-on: ubuntu-latest
+
+
+    #      ###################      PUSH TO AWS ECR      #####################
+    #
+    #      - name: configure aws credentials
+    #        uses: aws-actions/configure-aws-credentials@v2
+    #        with:
+    #          role-to-assume: arn:aws:iam::711335785459:role/GitHubAction-AssumeRoleWithAction
+    #          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+    #          aws-region: ${{ env.AWS_REGION }}
+    #
+    #      - name: Login to Amazon ECR
+    #        id: login-ecr
+    #        uses: aws-actions/amazon-ecr-login@v1
+    #        with:
+    #          mask-password: 'true'
+    #
+    #      - name: Build, tag, and push docker image to Amazon ECR
+    #        env:
+    #          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+    #          REPOSITORY: odds-api
+    #          IMAGE_TAG: ${{ github.sha }}
+    #        run: |
+    #          docker build -t $REGISTRY/$REPOSITORY:latest .
+    #          docker push $REGISTRY/$REPOSITORY:latest
+    #          docker tag $REGISTRY/$REPOSITORY:latest $REGISTRY/$REPOSITORY:$IMAGE_TAG
+    #          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+    steps:
+      - name: Setup JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v3
+        env:
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+
+      - name: Download artifact
+        run: |
+          jf rt dl my-local-repo/cool-froggy.zip
+
+      - name: deploy to aws
+        uses: wahyd4/kubectl-helm-action@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          args: |
+            echo Deploying tag ${{ github.event.client_payload.tag }}
+            helm repo add vegapunk-helm https://mydemo.jfrog.io/artifactory/api/helm/vegapunk-helm --username k8s --password ${{ secrets.RT_HELM_REPO_PASSWORD }}
+            helm upgrade --install -n demo --set image.tag=${{ github.event.client_payload.tag }} --version=0.1.0 turbine vegapunk-helm/turbine
+            kubectl get pod -n demo

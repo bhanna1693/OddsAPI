@@ -53,11 +53,9 @@ jobs:
           distribution: temurin
           cache: maven
 
-  build:
-    name: Build, Test, and Publish to Artifactory
-    runs-on: ubuntu-latest
+      - name: List Dir
+        run: ls -R -a
 
-    steps:
       - name: Copy settings.xml
         run: cp .github/settings.xml $HOME/.m2/settings.xml
 
@@ -69,8 +67,27 @@ jobs:
       - name: Setup JF mvn-config
         run: jf mvn-config  # uses JF_ENV_! to setup mvn config
 
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true
 
+#  test:
+#    name: Test
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Test with JF Maven
+#        run: jf mvn test
+
+  publish:
+    name: Publish to Artifactory
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy to Artifactory
         run: jf mvn deploy -DskipTests=true

@@ -54,10 +54,22 @@ jobs:
       - name: Copy settings.xml
         run: cp .github/settings.xml $HOME/.m2/settings.xml
 
+  setupJFrog:
+    name: setup jfrog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v3
+        env:
+          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
+
+      - name: Setup JF mvn-config
+        run: jf mvn-config  # uses JF_ENV_! to setup mvn config
+
   build:
     name: Build
     runs-on: ubuntu-latest
-    # uses: bhanna1693/OddsAPI/.github/workflows/setup-jfrog.yml@main
+    needs: setupJFrog
 
     steps:
       - uses: ./.github/workflows/setup-jfrog.yml
@@ -75,6 +87,7 @@ jobs:
   publish:
     name: Publish to Artifactory
     runs-on: ubuntu-latest
+    needs: setupJFrog
 
     steps:
       - uses: ./.github/workflows/setup-jfrog.yml

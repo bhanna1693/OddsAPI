@@ -10,6 +10,8 @@ runs:
     - uses: jfrog/setup-jfrog-cli@v3
       env:
         JF_ENV_1: ${{ inputs.jf_env_1 }}
+      shell: bash
 
     - name: Setup JFrog mvn-config
+      shell: bash
       run: jf mvn-config

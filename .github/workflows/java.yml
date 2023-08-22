@@ -10,6 +10,17 @@ on:
 
 env:
   AWS_REGION: "us-east-1"
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_USERNAME: ${{ secrets.DB_USERNAME }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+  BOOKMAKERS: $BOOKMAKERS
+  MARKETS: $MARKETS
+  CORS_ALLOWED_ORIGINS: ${{ secrets.CORS_ALLOWED_ORIGINS }}
+  ISSUER_URI: ${{ secrets.ISSUER_URI }}
+  AUDIENCE: ${{ secrets.AUDIENCE }}
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
 
 # Permission can be added at job level or workflow level
 permissions:
@@ -25,38 +36,11 @@ concurrency:
 
 jobs:
   # Label of the container job
-  build:
-    name: Build and test app
+  setup:
+    name: setup java
 
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-
-    env:
-      DB_HOST: ${{ secrets.DB_HOST }}
-      DB_USERNAME: ${{ secrets.DB_USERNAME }}
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-      BOOKMAKERS: $BOOKMAKERS
-      MARKETS: $MARKETS
-      CORS_ALLOWED_ORIGINS: ${{ secrets.CORS_ALLOWED_ORIGINS }}
-      ISSUER_URI: ${{ secrets.ISSUER_URI }}
-      AUDIENCE: ${{ secrets.AUDIENCE }}
-
-    #    services:
-    #      postgres_db:
-    #        image: postgres
-    #        env:
-    #          POSTGRES_USER: ${{ env.DB_USERNAME }}
-    #          POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
-    #          POSTGRES_DB: odds
-    #        ports:
-    #          - 5432:5432
-    #          # Set health checks to wait until postgres has started
-    #        options: >-
-    #          --health-cmd pg_isready
-    #          --health-interval 10s
-    #          --health-timeout 5s
-    #          --health-retries 5
 
     steps:
       - name: Check out Repository
@@ -69,7 +53,13 @@ jobs:
           distribution: temurin
           cache: maven
 
+  build:
+    name: Build, Test, and Publish to Artifactory
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Copy settings.xml
+        run: cp .github/settings.xml $HOME/.m2/settings.xml
 
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
@@ -84,25 +74,3 @@ jobs:
 
       - name: Deploy to Artifactory
         run: jf mvn deploy -DskipTests=true
-
-#      - name: Build Tag and push Docker Image
-#        env:
-#          IMAGE_NAME: bhanna.jfrog.io/bhanna-docker/bhanna-odds-api:${{ github.run_number }}
-#        run: |
-#          jf docker build -t $IMAGE_NAME .
-#          jf docker push $IMAGE_NAME
-#
-#      - name: Publish Build info With JFrog CLI
-#        env:
-#          # Generated and maintained by GitHub
-#          JFROG_CLI_BUILD_NAME: bhanna-OddsAPI
-#          # JFrog organization secret
-#          JFROG_CLI_BUILD_NUMBER: ${{ github.run_number }}
-#        run: |
-#          # Export the build name and build number
-#          # Collect environment variables for the build
-#          jf rt build-collect-env
-#          # Collect VCS details from git and add them to the build
-#          jf rt build-add-git
-#          # Publish build info
-#          jf rt build-publish

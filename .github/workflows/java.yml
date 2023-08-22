@@ -36,8 +36,7 @@ concurrency:
 
 jobs:
 
-  setup-java:
-    name: Setup Java
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -54,15 +53,6 @@ jobs:
       - name: Copy settings.xml to configure Artifactory
         run: cp .github/settings.xml $HOME/.m2/settings.xml
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: setup-java
-
-    steps:
-      - name: Check out Repository
-        uses: actions/checkout@v3
-
       - uses: jfrog/setup-jfrog-cli@v3
         env:
           JF_ENV_1: ${{ secrets.JF_ENV_1 }}
@@ -72,30 +62,6 @@ jobs:
 
       - name: Build with JF Maven
         run: jf mvn clean install -DskipTests=true
-  #  test:
-  #    name: Test
-  #    runs-on: ubuntu-latest
-  #
-  #    steps:
-  #      - name: Test with JF Maven
-  #        run: jf mvn test
-
-  publish:
-    name: Publish to Artifactory
-    runs-on: ubuntu-latest
-
-    needs: build
-
-    steps:
-      - name: Check out Repository
-        uses: actions/checkout@v3
-
-      - uses: jfrog/setup-jfrog-cli@v3
-        env:
-          JF_ENV_1: ${{ secrets.JF_ENV_1 }}
-
-      - name: Setup JFrog mvn-config
-        run: jf mvn-config
 
       - name: Deploy to Artifactory
         run: jf mvn deploy -DskipTests=true

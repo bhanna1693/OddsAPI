@@ -57,6 +57,7 @@ jobs:
     name: setup jfrog
     runs-on: ubuntu-latest
     needs: setupJava
+
     steps:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v3
@@ -85,7 +86,9 @@ jobs:
   publish:
     name: Publish to Artifactory
     runs-on: ubuntu-latest
-    needs: setupJFrog
+    needs:
+      - setupJFrog
+      - build
 
     steps:
       - name: Deploy to Artifactory

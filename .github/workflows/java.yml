@@ -42,21 +42,21 @@ jobs:
       ISSUER_URI: ${{ secrets.ISSUER_URI }}
       AUDIENCE: ${{ secrets.AUDIENCE }}
 
-    services:
-      postgres_db:
-        image: postgres
-        env:
-          POSTGRES_USER: ${{ env.DB_USERNAME }}
-          POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
-          POSTGRES_DB: odds
-        ports:
-          - 5432:5432
-          # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    #    services:
+    #      postgres_db:
+    #        image: postgres
+    #        env:
+    #          POSTGRES_USER: ${{ env.DB_USERNAME }}
+    #          POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
+    #          POSTGRES_DB: odds
+    #        ports:
+    #          - 5432:5432
+    #          # Set health checks to wait until postgres has started
+    #        options: >-
+    #          --health-cmd pg_isready
+    #          --health-interval 10s
+    #          --health-timeout 5s
+    #          --health-retries 5
 
     steps:
       - name: Check out Repository
@@ -78,27 +78,31 @@ jobs:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
-      - name: Build Tag and push Docker Image
-        env:
-          IMAGE_NAME: bhanna.jfrog.io/bhanna-docker/bhanna-odds-api:${{ github.run_number }}
+      - name: Deploy to Artifactory
         run: |
-          jf docker build -t $IMAGE_NAME .
-          jf docker push $IMAGE_NAME
+          jf mvn deploy 
 
-      - name: Publish Build info With JFrog CLI
-        env:
-          # Generated and maintained by GitHub
-          JFROG_CLI_BUILD_NAME: bhanna-OddsAPI
-          # JFrog organization secret
-          JFROG_CLI_BUILD_NUMBER : ${{ github.run_number }}
-        run: |
-          # Export the build name and build number
-          # Collect environment variables for the build
-          jf rt build-collect-env
-          # Collect VCS details from git and add them to the build
-          jf rt build-add-git
-          # Publish build info
-          jf rt build-publish
+#      - name: Build Tag and push Docker Image
+#        env:
+#          IMAGE_NAME: bhanna.jfrog.io/bhanna-docker/bhanna-odds-api:${{ github.run_number }}
+#        run: |
+#          jf docker build -t $IMAGE_NAME .
+#          jf docker push $IMAGE_NAME
+#
+#      - name: Publish Build info With JFrog CLI
+#        env:
+#          # Generated and maintained by GitHub
+#          JFROG_CLI_BUILD_NAME: bhanna-OddsAPI
+#          # JFrog organization secret
+#          JFROG_CLI_BUILD_NUMBER: ${{ github.run_number }}
+#        run: |
+#          # Export the build name and build number
+#          # Collect environment variables for the build
+#          jf rt build-collect-env
+#          # Collect VCS details from git and add them to the build
+#          jf rt build-add-git
+#          # Publish build info
+#          jf rt build-publish
 
 
 #      ###################      PUSH TO DOCKER      #####################

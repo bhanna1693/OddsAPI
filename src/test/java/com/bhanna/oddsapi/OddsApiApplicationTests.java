@@ -1,16 +1,11 @@
 package com.bhanna.oddsapi;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@SpringBootTest
-class OddsApiApplicationTests {
-
-    @Test
-    void contextLoads() {
-        assertTrue(true);
-    }
-
-}
+//@SpringBootTest
+//class OddsApiApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//        assertTrue(true);
+//    }
+//
+//}

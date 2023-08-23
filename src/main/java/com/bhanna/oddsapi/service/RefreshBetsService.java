@@ -15,16 +15,16 @@ public class RefreshBetsService {
 
     @Value("odds-api.markets")
     private List<String> defaultMarkets;
-    private final OddsApiService oddsApiService;
+    private final OddsApiClientService oddsApiClientService;
 
-    public RefreshBetsService(OddsApiService oddsApiService) {
-        this.oddsApiService = oddsApiService;
+    public RefreshBetsService(OddsApiClientService oddsApiClientService) {
+        this.oddsApiClientService = oddsApiClientService;
     }
 
     @Scheduled(cron = "0 0 * * * *")
     public void refreshPositiveEvBets() {
         List<MarketKey> markets = defaultMarkets.stream().map(MarketKey::valueOf).toList();
 
-        oddsApiService.getExpectedValueForSportsEvents(defaultBookmakers, markets);
+        oddsApiClientService.getExpectedValueForSportsEvents(defaultBookmakers, markets);
     }
 }

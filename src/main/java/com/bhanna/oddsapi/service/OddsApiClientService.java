@@ -14,14 +14,12 @@ import java.util.List;
 
 @Service
 @Log4j2
-public class OddsApiService {
+public class OddsApiClientService {
     private final OddsApiClient oddsApiClient;
-    private final ExpectedValueService expectedValueService;
     private final EdgeService edgeService;
 
-    public OddsApiService(OddsApiClient oddsApiClient, ExpectedValueService expectedValueService, EdgeService edgeService) {
+    public OddsApiClientService(OddsApiClient oddsApiClient, EdgeService edgeService) {
         this.oddsApiClient = oddsApiClient;
-        this.expectedValueService = expectedValueService;
         this.edgeService = edgeService;
     }
 

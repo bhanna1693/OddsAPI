@@ -9,13 +9,13 @@ import java.util.List;
 
 @Service
 public class BetsService {
-    private final OddsApiService oddsApiService;
+    private final OddsApiClientService oddsApiClientService;
 
-    public BetsService(OddsApiService oddsApiService) {
-        this.oddsApiService = oddsApiService;
+    public BetsService(OddsApiClientService oddsApiClientService) {
+        this.oddsApiClientService = oddsApiClientService;
     }
 
     public Flux<EdgeData> getExpectedValueBets(List<String> bookmakers, List<MarketKey> markets) {
-        return oddsApiService.getExpectedValueForSportsEvents(bookmakers, markets);
+        return oddsApiClientService.getExpectedValueForSportsEvents(bookmakers, markets);
     }
 }

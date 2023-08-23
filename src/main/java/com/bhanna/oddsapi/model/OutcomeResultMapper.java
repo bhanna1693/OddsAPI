@@ -21,11 +21,11 @@ public class OutcomeResultMapper {
         double awayEdgePercent;
 
         if (Objects.equals(bookmaker, "pinnacle")) {
-            homeEdgePercent = Calculator.calculateExpectedValue(homePrice, noVigProbabilityHome);
-            awayEdgePercent = Calculator.calculateExpectedValue(awayPrice, noVigProbabilityAway);
+            homeEdgePercent = Calculator.calculateEdge(impliedProbabilityHome, noVigProbabilityHome);
+            awayEdgePercent = Calculator.calculateEdge(impliedProbabilityAway, noVigProbabilityAway);
         } else {
-            homeEdgePercent = Calculator.calculateExpectedValue(homePrice, edgeData.getSharpestOutcomeResult().noVigProbabilityHome());
-            awayEdgePercent = Calculator.calculateExpectedValue(awayPrice, edgeData.getSharpestOutcomeResult().noVigProbabilityAway());
+            homeEdgePercent = Calculator.calculateEdge(impliedProbabilityHome, edgeData.getSharpestOutcomeResult().noVigProbabilityHome());
+            awayEdgePercent = Calculator.calculateEdge(impliedProbabilityAway, edgeData.getSharpestOutcomeResult().noVigProbabilityAway());
         }
 
         return new OutcomeResult(

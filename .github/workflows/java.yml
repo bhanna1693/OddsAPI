@@ -80,7 +80,12 @@ jobs:
       - name: Build with JF Maven
         run: |
           export SPRING_PROFILES_ACTIVE=test
-          jf mvn clean install 
+          jf mvn test     
+
+      - name: Build with JF Maven
+        run: |
+          export SPRING_PROFILES_ACTIVE=prod
+          jf mvn clean install -DskipTests=true 
 
 #      - name: Deploy to Artifactory
 #        run: |

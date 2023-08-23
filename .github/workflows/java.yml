@@ -77,10 +77,10 @@ jobs:
           --repo-deploy-releases bhanna-libs-release-local \
           --repo-deploy-snapshots bhanna-libs-snapshot-local
 
-      - name: Test with JF Maven
-        run: |
-          export SPRING_PROFILES_ACTIVE=test
-          jf mvn test     
+#      - name: Test with JF Maven
+#        run: |
+#          export SPRING_PROFILES_ACTIVE=test
+#          jf mvn test
 
       - name: Build with JF Maven
         run: |

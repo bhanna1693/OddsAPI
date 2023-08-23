@@ -38,7 +38,7 @@ class EdgeServiceTest {
     }
 
     @Test
-    public void testAllOutcomes() {
+    public void testExpectedValues() {
         setupAllOutcomes();
 
         StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
@@ -47,10 +47,45 @@ class EdgeServiceTest {
                     assertTrue(optimalOutcomeResult.awayEdgePercent() > 0);
                     assertEquals(mixedOutcomeResult.homeEdgePercent(), data.getHomeEdgePercent());
                     assertEquals(optimalOutcomeResult.awayEdgePercent(), data.getAwayEdgePercent());
+                    return true;
+                })
+                .verifyComplete();
+    }
+
+    @Test
+    public void testNames() {
+        setupAllOutcomes();
+
+        StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
+                .expectNextMatches(data -> {
                     assertEquals(homeName, data.getBestPriceHomeName());
                     assertEquals(awayName, data.getBestPriceAwayName());
                     assertEquals(mixedOutcomeResult.homePrice(), data.getBestPriceHomeOdds());
                     assertEquals(optimalOutcomeResult.awayPrice(), data.getBestPriceAwayOdds());
+                    return true;
+                })
+                .verifyComplete();
+    }
+
+    @Test
+    public void testOdds() {
+        setupAllOutcomes();
+
+        StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
+                .expectNextMatches(data -> {
+                    assertEquals(mixedOutcomeResult.homePrice(), data.getBestPriceHomeOdds());
+                    assertEquals(optimalOutcomeResult.awayPrice(), data.getBestPriceAwayOdds());
+                    return true;
+                })
+                .verifyComplete();
+    }
+
+    @Test
+    public void testBooks() {
+        setupAllOutcomes();
+
+        StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
+                .expectNextMatches(data -> {
                     assertTrue(data.getBestPriceHomeBooks().containsAll(List.of("fanduel", "draftkings")));
                     assertFalse(data.getBestPriceHomeBooks().contains("barstool"));
                     assertTrue(data.getBestPriceAwayBooks().contains("fanduel"));

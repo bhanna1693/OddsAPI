@@ -36,11 +36,16 @@ class EdgeServiceTest {
                 1.0
         );
         edgeData.setSharpestOutcomeResult(sharpestOutcomeResult);
+
+        optimalOutcomeResult = OutcomeResultMapper.generate("fanduel", homeName, awayName, 5.1, 1.1, edgeData.getSharpestOutcomeResult());
+        mixedOutcomeResult = OutcomeResultMapper.generate("draftkings", homeName, awayName, 5.1, 0.9, edgeData.getSharpestOutcomeResult());
+        worstOutcomeResult = OutcomeResultMapper.generate("barstool", homeName, awayName, 4.9, 0.9, edgeData.getSharpestOutcomeResult());
+
+        edgeData.setOutcomeResults(List.of(worstOutcomeResult, mixedOutcomeResult, optimalOutcomeResult));
     }
 
     @Test
     public void testExpectedValues() {
-        setupAllOutcomes();
 
         StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
                 .expectNextMatches(data -> {
@@ -55,7 +60,6 @@ class EdgeServiceTest {
 
     @Test
     public void testNames() {
-        setupAllOutcomes();
 
         StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
                 .expectNextMatches(data -> {
@@ -70,7 +74,6 @@ class EdgeServiceTest {
 
     @Test
     public void testOdds() {
-        setupAllOutcomes();
 
         StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
                 .expectNextMatches(data -> {
@@ -83,7 +86,6 @@ class EdgeServiceTest {
 
     @Test
     public void testBooks() {
-        setupAllOutcomes();
 
         StepVerifier.create(edgeService.getBestPlays(Flux.just(edgeData)))
                 .expectNextMatches(data -> {
@@ -97,11 +99,4 @@ class EdgeServiceTest {
                 .verifyComplete();
     }
 
-    private void setupAllOutcomes() {
-        optimalOutcomeResult = OutcomeResultMapper.generate("fanduel", homeName, awayName, 5.1, 1.1, edgeData.getSharpestOutcomeResult());
-        mixedOutcomeResult = OutcomeResultMapper.generate("draftkings", homeName, awayName, 5.1, 0.9, edgeData.getSharpestOutcomeResult());
-        worstOutcomeResult = OutcomeResultMapper.generate("barstool", homeName, awayName, 4.9, 0.9, edgeData.getSharpestOutcomeResult());
-
-        edgeData.setOutcomeResults(List.of(worstOutcomeResult, mixedOutcomeResult, optimalOutcomeResult));
-    }
 }

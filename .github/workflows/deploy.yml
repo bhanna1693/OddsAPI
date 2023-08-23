@@ -34,7 +34,11 @@ jobs:
         env:
           SOURCE_PATH: bhanna-libs-snapshot-local/com/bhanna/OddsAPI/*.jar
           TARGET_PATH: target/
-        run: jf rt dl $SOURCE_PATH $TARGET_PATH
+        run: |
+          jf rt dl $SOURCE_PATH $TARGET_PATH \
+          --sort-by=created
+          --sort-order=desc 
+          --limit=1
 
 
       - name: Set up QEMU
@@ -42,6 +46,13 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       ###################      PUSH TO AWS ECR      #####################
 

@@ -5,6 +5,7 @@ import com.bhanna.oddsapi.model.OutcomeResult;
 import com.bhanna.oddsapi.model.OutcomeResultMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
@@ -12,8 +13,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class EdgeServiceTest {
-    EdgeService edgeService = new EdgeService();
+    private final EdgeService edgeService = new EdgeService();
     final String homeName = "Pittsburgh Steelers";
     final String awayName = "New England Patriots";
     EdgeData edgeData;

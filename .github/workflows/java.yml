@@ -79,6 +79,7 @@ jobs:
 
       - name: Build with JF Maven
         run: |
+          export SPRING_PROFILES_ACTIVE=test
           jf mvn clean install 
 
 #      - name: Deploy to Artifactory

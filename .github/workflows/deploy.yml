@@ -36,8 +36,8 @@ jobs:
           TARGET_PATH: target/
         run: |
           jf rt dl $SOURCE_PATH $TARGET_PATH \
-          --sort-by=created
-          --sort-order=desc 
+          --sort-by=created \
+          --sort-order=desc \
           --limit=1
 
 

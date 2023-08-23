@@ -3,6 +3,7 @@ package com.bhanna.oddsapi.service;
 import com.bhanna.oddsapi.model.EdgeData;
 import com.bhanna.oddsapi.model.OutcomeResult;
 import com.bhanna.oddsapi.model.OutcomeResultMapper;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
@@ -10,7 +11,10 @@ import reactor.test.StepVerifier;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 class EdgeServiceTest {
     private EdgeService edgeService;

@@ -65,6 +65,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           echo "$PWD"
+          echo $(ls -R)
           docker build -t $REGISTRY/$REPOSITORY:latest .
           docker push $REGISTRY/$REPOSITORY:latest
           docker tag $REGISTRY/$REPOSITORY:latest $REGISTRY/$REPOSITORY:$IMAGE_TAG

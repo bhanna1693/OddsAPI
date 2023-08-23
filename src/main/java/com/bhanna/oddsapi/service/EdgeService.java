@@ -31,7 +31,7 @@ public class EdgeService {
         }
     }
 
-    private static void addEdgeDataToMap(OddsApiSportsEvent sportsEvent, Map<String, EdgeData> edgeDataMap, OddsApiSportsEvent.Bookmaker bookmaker) {
+    private void addEdgeDataToMap(OddsApiSportsEvent sportsEvent, Map<String, EdgeData> edgeDataMap, OddsApiSportsEvent.Bookmaker bookmaker) {
         for (OddsApiSportsEvent.Market market : bookmaker.getMarkets()) {
             // get corresponding sharpest market
             // if it does not exist, skip by throwing

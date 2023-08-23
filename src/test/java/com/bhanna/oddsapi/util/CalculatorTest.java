@@ -20,32 +20,6 @@ public class CalculatorTest {
         assertEquals(expectedImpliedProbabilityAway, impliedProbabilityAway);
     }
 
-    // Define expected values based on the mock calculator values
-//    Double expectedHomePrice = homeOdds;
-//    Double expectedAwayPrice = awayOdds;
-//    Double expectedImpliedProbabilityHome = 0.6666666666666666;
-//    Double expectedImpliedProbabilityAway = 0.5;
-//    Double expectedJuice = expectedImpliedProbabilityHome + expectedImpliedProbabilityAway - 1;
-//    Double expectedNoVigProbabilityHome = expectedImpliedProbabilityHome / (expectedImpliedProbabilityHome + expectedImpliedProbabilityAway);
-//    Double expectedNoVigProbabilityAway = expectedImpliedProbabilityAway / (expectedImpliedProbabilityAway + expectedImpliedProbabilityHome);
-//    Double expectedNoVigOddsHome = 1 / expectedNoVigProbabilityHome;
-//    Double expectedNoVigOddsAway = 1 / expectedNoVigProbabilityAway;
-    @Test
-    public void testCalculateJuiceHomeAway() {
-        double impliedProbabilityHome = 0.5;
-        double impliedProbabilityAway = 0.6666666666666666;
-
-        double juiceHome = Calculator.calculateJuice(impliedProbabilityHome, impliedProbabilityAway);
-        double juiceAway = Calculator.calculateJuice(impliedProbabilityAway, impliedProbabilityHome);
-
-        double expectedJuiceHome = 0.16666666666666652;
-        double expectedJuiceAway = 0.16666666666666652;
-
-        assertEquals(expectedJuiceHome, expectedJuiceAway);
-        assertEquals(expectedJuiceHome, juiceHome);
-        assertEquals(expectedJuiceAway, juiceAway);
-    }
-
     @Test
     public void testCalculateNoVigFairOddsProbabilityHomeAway() {
         double impliedProbabilityHome = 0.5;

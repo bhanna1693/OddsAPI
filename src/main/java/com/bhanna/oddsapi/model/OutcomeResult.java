@@ -13,8 +13,7 @@ public record OutcomeResult(
         Double noVigProbabilityAway,
         Double noVigOddsHome,
         Double noVigOddsAway,
-        Double juice,
-        Double homeEdgePercent,
-        Double awayEdgePercent
+        double homeEdgePercent,
+        double awayEdgePercent
 ) {
 }

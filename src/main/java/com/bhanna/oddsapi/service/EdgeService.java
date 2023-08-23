@@ -69,38 +69,42 @@ public class EdgeService {
 
     public Flux<EdgeData> getBestPlays(Flux<EdgeData> edgeDataFlux) {
         return edgeDataFlux.map(edgeData -> {
-            double bestEdgePercentHome = -999.9;
-            double bestEdgePercentAway = -999.9;
+            double bestHomeEdgePercent = -999.9;
+            double bestAwayEdgePercent = -999.9;
             String bestPriceAwayName = null;
-            Double bestPriceAwayOdds = null;
+            double bestPriceAwayOdds = 0;
             List<String> bestPriceAwayBooks = new ArrayList<>();
             String bestPriceHomeName = null;
-            Double bestPriceHomeOdds = null;
+            double bestPriceHomeOdds = 0;
             List<String> bestPriceHomeBooks = new ArrayList<>();
 
             for (OutcomeResult outcomeResult : edgeData.getOutcomeResults()) {
-                if (outcomeResult.homeEdgePercent() > bestEdgePercentHome) {
-                    bestEdgePercentHome = outcomeResult.homeEdgePercent();
+                System.out.printf("CHECKING EDGE FOR: %s %s %s \n", outcomeResult.bookmaker(), outcomeResult.homeEdgePercent(), outcomeResult.awayEdgePercent());
+
+                if (outcomeResult.homeEdgePercent() > bestHomeEdgePercent) {
+                    System.out.printf("NEW HOME EDGE PERCENT: %s %s \n", outcomeResult.bookmaker(), outcomeResult.homeEdgePercent());
+                    bestHomeEdgePercent = outcomeResult.homeEdgePercent();
                     bestPriceHomeOdds = outcomeResult.homePrice();
                     bestPriceHomeName = outcomeResult.homeName();
                     bestPriceHomeBooks.clear();
                     bestPriceHomeBooks.add(outcomeResult.bookmaker());
-                } else if (outcomeResult.homeEdgePercent() == bestEdgePercentHome) {
+                } else if (outcomeResult.homeEdgePercent() == bestHomeEdgePercent) {
                     bestPriceHomeBooks.add(outcomeResult.bookmaker());
                 }
-                if (outcomeResult.awayEdgePercent() > bestEdgePercentAway) {
-                    bestEdgePercentAway = outcomeResult.awayEdgePercent();
+                if (outcomeResult.awayEdgePercent() > bestAwayEdgePercent) {
+                    System.out.printf("NEW AWAY EDGE PERCENT: %s %s \n", outcomeResult.bookmaker(), outcomeResult.awayEdgePercent());
+                    bestAwayEdgePercent = outcomeResult.awayEdgePercent();
                     bestPriceAwayOdds = outcomeResult.awayPrice();
                     bestPriceAwayName = outcomeResult.awayName();
                     bestPriceAwayBooks.clear();
                     bestPriceAwayBooks.add(outcomeResult.bookmaker());
-                } else if (outcomeResult.awayEdgePercent() == bestEdgePercentAway) {
+                } else if (outcomeResult.awayEdgePercent() == bestAwayEdgePercent) {
                     bestPriceAwayBooks.add(outcomeResult.bookmaker());
                 }
             }
 
-            edgeData.setHomeEdgePercent(bestEdgePercentHome);
-            edgeData.setAwayEdgePercent(bestEdgePercentAway);
+            edgeData.setHomeEdgePercent(bestHomeEdgePercent);
+            edgeData.setAwayEdgePercent(bestAwayEdgePercent);
             edgeData.setBestPriceAwayName(bestPriceAwayName);
             edgeData.setBestPriceAwayOdds(bestPriceAwayOdds);
             edgeData.setBestPriceAwayBooks(bestPriceAwayBooks);
